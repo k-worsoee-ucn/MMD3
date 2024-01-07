@@ -1,8 +1,136 @@
 <script setup>
-
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
   <main>
+    <img class="logo" src="../assets/logo_laerkelundenx.svg" alt="">
+    <h2>Oplevelser</h2>
+    <div class="cardHolder">
+      <div class="card">
+        <img src="https://unsplash.it/400" alt="">
+        <RouterLink to="/oplevelser">Se alle oplevelser</RouterLink>
+      </div>
+    </div>
+    <hr>
+    <h2>Aktiviteter</h2>
+    <div class="cardHolder">
+      <div class="card">
+        <img src="https://unsplash.it/400" alt="">
+        <RouterLink to="/aktiviteter">Se alle aktiviteter</RouterLink>
+      </div>
+    </div>
+    <hr>
+    <h2>Overnatning</h2>
+    <div class="cardHolder">
+      <div class="card ocard">
+        <img src="https://unsplash.it/400" alt="">
+        <RouterLink to="/udlejningsvogne">Udlejningsvogne</RouterLink>
+      </div>
+      <div class="card ocard">
+        <img src="https://unsplash.it/400" alt="">
+        <RouterLink to="/hytter">Hytter</RouterLink>
+      </div>
+      <div class="card ocard">
+        <img src="https://unsplash.it/400" alt="">
+        <RouterLink to="/camping">Camping</RouterLink>
+      </div>
+    </div>
   </main>
+
+  <RouterView />
 </template>
+
+<style scoped>
+.logo {
+  grid-column: 4/span 3;
+  width: 100%;
+  margin-top: 15%;
+}
+.card a {
+  text-decoration: none;
+  font-family: Manrope;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #000;
+  margin-left: 5%;
+}
+
+hr {
+  grid-column: 2/span 7;
+  width: 100%;
+  margin-top: 15%;
+}
+
+.cardHolder {
+  grid-column: 2/span 7;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.card {
+  background-color: #FFF;
+  border-radius: 15px;
+  grid-column: span 7;
+}
+
+.ocard {
+  margin-bottom: 5%;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+  aspect-ratio: 16/7;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin-left: 5%;
+  font-family: Manrope;
+}
+
+main h2 {
+  grid-column: 2/span 7;
+  font-family: Manrope;
+}
+
+.menu {
+  grid-column: 9;
+  width: 80%;
+  margin: auto;
+}
+
+.hiddenElement {
+  display: none;
+}
+
+header,
+main {
+  grid-column: 1/span 9;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.navLogo {
+  width: 60%;
+  margin: 10% auto;
+}
+
+nav a {
+  margin: auto;
+  font-family: Manrope;
+}
+
+nav hr {
+  width: 50%;
+}
+
+body {
+  margin: 0;
+}
+
+nav {
+  display: grid;
+  grid-column: 1/span 9;
+}</style>
