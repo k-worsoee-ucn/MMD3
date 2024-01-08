@@ -70,7 +70,7 @@ hr {
 
 .card {
   background-color: #FFF;
-  border-radius: 15px;
+  border-radius: 5px;
   grid-column: span 7;
 }
 
@@ -80,14 +80,15 @@ hr {
 
 .card img {
   width: 100%;
-  border-radius: 15px 15px 0 0;
+  border-radius: 5px 5px 0 0;
   aspect-ratio: 16/7;
   object-fit: cover;
 }
 
-.card h3 {
+.card a {
   margin-left: 5%;
   font-family: Manrope;
+  padding: 5% 0;
 }
 
 main h2 {
@@ -99,10 +100,6 @@ main h2 {
   grid-column: 9;
   width: 80%;
   margin: auto;
-}
-
-.hiddenElement {
-  display: none;
 }
 
 header,

@@ -9,6 +9,7 @@
         </a>
         <img class="logo" src="../assets/logo_laerkelundenx.svg" alt="">
         <h1>Udlejningsvogne</h1>
+        <img src="https://unsplash.it/500" alt="">
     </main>
 </template>
 

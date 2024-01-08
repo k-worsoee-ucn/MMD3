@@ -1,16 +1,11 @@
 <script setup>
-const splashLogo = document.querySelector("#splashLogo")
-const header = document.querySelector("header")
-
-    function changeVis() {
-        header.classList.remove("hiddenElement")
-    }
+const firstLoad = sessionStorage.getItem("firstLoad")
 
 </script>
 
-<template>
+<template v-if="firstLoad !== false">
     <div class="splashDiv">
-        <img id="splashLogo" src="../assets/logo_laerkelundenx.svg" alt="" @animationend="changeVis">
+        <img id="splashLogo" src="../assets/logo_laerkelundenx.svg" alt="">
     </div>
 </template>
 
@@ -19,8 +14,6 @@ div {
     height: 100vh;
     grid-column: 1/span 9;
 }
-
-
 </style>
 <style>
 .splashDiv {
@@ -33,7 +26,6 @@ div {
 #splashLogo {
     width: 90%;
     margin: 40vh 5%;
-    
-}
 
+}
 </style>

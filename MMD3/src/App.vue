@@ -1,139 +1,98 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import TheSplashScreen from './components/TheSplashScreen.vue';
-import { ref } from 'vue';
+import { onUpdated } from 'vue';
 
-
-const menuVis = ref(false)
-const menuIcon = document.querySelector(".menu")
-const nav = document.querySelector("nav")
-
-function menuChange() {
-  if(menuVis.value = false) {
-    nav.style.display = "grid";
-    menuIcon.setAttribute("src", "xmark-solid.svg")
-    menuVis.value = true;
-  } else {
-    nav.style.display = "none";
-    menuIcon.setAttribute("src", "bars-solid.svg")
-    menuVis.value = false;
-  }
-}
+onUpdated(() => {
+  sessionStorage.setItem("firstLoad", false)
+})
 
 </script>
 
 <template>
-  <TheSplashScreen></TheSplashScreen>
-  <header class="hiddenElement">
-    <!-- <a @click="menuVis = !menuVis, menuChange" href="#">
-      <img class="menu" src="./assets/bars-solid.svg" alt="">
+  <TheSplashScreen class="splashscreen"></TheSplashScreen>
+  <div class="menu">
+    <a id="menuItem1" href="">
+      <img src="./assets/house-solid.svg" alt="">
     </a>
-      <nav>
-        <img class="navLogo" src="./assets/logo_laerkelundenx.svg" alt="">
-        <RouterLink to="/">Home</RouterLink>
-        <hr>
-        <RouterLink to="/about">About</RouterLink>
-      </nav> -->
-  </header>
-  <main></main>
-
+    <a id="menuItem2" href="">
+      <img src="./assets/star-solid.svg" alt="">
+    </a>
+    <a id="menuItem3" href="">
+      <img src="./assets/calendar-solid.svg" alt="">
+    </a>
+    <a id="menuItem4" href="">
+      <img src="./assets/user-solid.svg" alt="">
+    </a>
+  </div>
   <RouterView />
-
-  
 </template>
 
 <style scoped>
-
-hr {
-  grid-column: 2/span 7;
-  width: 100%;
-  margin-top: 15%;
-}
-.cardHolder {
-  grid-column: 2/span 7;
+.menu {
+  grid-column: 1/span 9;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-}
-.card {
-  background-color: #FFF;
-  border-radius: 15px;
-  grid-column: span 7;
-}
-
-.ocard {
-  margin-bottom: 5%;
-}
-
-.card img {
-  width: 100%;
+  grid-template-columns: 5% repeat(4, 1fr) 5%;
+  background-color: orange;
+  padding: 2% 0;
   border-radius: 15px 15px 0 0;
-  aspect-ratio: 16/7;
-  object-fit: cover;
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
 }
 
-.card h3 {
-  margin-left: 5%;
-  font-family: Manrope;
+#menuItem1 img, #menuItem2 img, #menuItem3 img, #menuItem4 img {
+  width: 50%;
+  height: 100%;
+  margin: auto 25%;
+  filter: invert(100%);
+}
+
+#menuItem1 {
+ grid-column: 2;
 }
 
 main h2 {
   grid-column: 2/span 7;
   font-family: Manrope;
 }
-.menu {
-  grid-column: 9;
-  width: 80%;
-  margin: auto;
+
+header,
+main {
+  grid-column: 1/span 9;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
 }
+</style>
+
+<!-- Global -->
+<style>
+#app {
+  background-color: #E5F4FF;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  min-height: 100vh;
+}
+
 .hiddenElement {
   display: none;
-}
-
-header, main {
- grid-column: 1/span 9;
- display: grid;
- grid-template-columns: repeat(9, 1fr);
-}
-
-.navLogo {
-  width: 60%;
-  margin: 10% auto;
-}
-
-nav a {
-  margin: auto;
-  font-family: Manrope;
-}
-
-nav hr {
-  width: 50%;
 }
 
 body {
   margin: 0;
 }
 
-nav {
-  display: grid;
-  grid-column: 1/span 9;
+.card {
+  box-shadow: 1px 1px 4px #000;
 }
 
-</style>
-
-<!-- Global -->
-<style>
-  #app {
-    background-color: #E5F4FF;
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
+@keyframes splash {
+  from {
+    scale: 1;
   }
 
-  body {
-    margin: 0;
+  to {
+    scale: 0;
+    display: none;
   }
-
-  @keyframes splash {
-  from {scale: 1;}
-  to {scale: 0; display: none;}
-}
-</style>
+}</style>
