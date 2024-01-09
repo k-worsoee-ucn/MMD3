@@ -42,6 +42,21 @@ const router = createRouter({
       name: 'camping',
       component: () => import('../views/CampingView.vue')
     },
+    {
+      path: '/myprofile',
+      name: 'myprofile',
+      component: () => import('../views/ProfileView.vue')
+    },
+    {
+      path: '/opretaktivitet',
+      name: 'opretaktivitet',
+      component: () => import('../views/OpretView.vue')
+    },
+    {
+      path: '/mineaktiviteter',
+      name: 'mineaktiviteter',
+      component: () => import('../views/MineAktiviteterView.vue')
+    },
   ]
 })
 

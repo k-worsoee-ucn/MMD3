@@ -71,7 +71,7 @@
             </div>
         </div>
         <h2>AKTIVITETER PÅ PLADSEN</h2>
-        <div class="cardHolder">
+        <div class="cardHolder" id="sec2">
             <div class="card">
                 <img src="https://unsplash.it/400" alt="">
                 <p>Oplevelse navn</p>
@@ -105,7 +105,10 @@
                 <p>Oplevelse navn</p>
             </div>
         </div>
-        <img class="plusBtn" src="../assets/plusBtn.svg" alt="">
+        <a class="plusBtn" href="/opretaktivitet">
+           <img src="../assets/plusBtn.svg" alt=""> 
+        </a>
+        
     </main>
 </template>
 
@@ -206,7 +209,11 @@ grid-template-columns: repeat(3,1fr);
 
 .plusBtn {
     position: fixed;
-    bottom: 2%;
+    bottom: 10%;
     right: 5%;
+}
+
+#sec2 {
+    margin-bottom: 10%;
 }
 </style>

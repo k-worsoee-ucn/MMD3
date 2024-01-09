@@ -12,16 +12,16 @@ onUpdated(() => {
 <template>
   <TheSplashScreen class="splashscreen"></TheSplashScreen>
   <div class="menu">
-    <a id="menuItem1" href="">
+    <a id="menuItem1" href="/">
       <img src="./assets/house-solid.svg" alt="">
     </a>
     <a id="menuItem2" href="">
       <img src="./assets/star-solid.svg" alt="">
     </a>
-    <a id="menuItem3" href="">
+    <a id="menuItem3" href="/mineaktiviteter">
       <img src="./assets/calendar-solid.svg" alt="">
     </a>
-    <a id="menuItem4" href="">
+    <a id="menuItem4" href="/myprofile">
       <img src="./assets/user-solid.svg" alt="">
     </a>
   </div>
@@ -33,7 +33,7 @@ onUpdated(() => {
   grid-column: 1/span 9;
   display: grid;
   grid-template-columns: 5% repeat(4, 1fr) 5%;
-  background-color: orange;
+  background-color: #B1D8F8;
   padding: 2% 0;
   border-radius: 15px 15px 0 0;
   position: fixed;
@@ -42,10 +42,11 @@ onUpdated(() => {
 }
 
 #menuItem1 img, #menuItem2 img, #menuItem3 img, #menuItem4 img {
-  width: 50%;
+  width: 35%;
   height: 100%;
   margin: auto 25%;
   filter: invert(100%);
+  padding: 5% 0;
 }
 
 #menuItem1 {
@@ -72,6 +73,7 @@ main {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   min-height: 100vh;
+  padding-bottom: 15%;
 }
 
 .hiddenElement {
