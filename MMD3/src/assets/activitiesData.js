@@ -3,6 +3,7 @@ const data = [
         id: 1,
         name: "FODBOLD",
         imgUrl: "/images/Sociale_aktiviteter/Fodbold.png",
+        time: "24. Juli - 13:00",
         creator: {
             creatorImageUrl: "/images/Personer/Martin.png",
             creatorName: "Martin Lystrup Jensen"
@@ -14,6 +15,7 @@ const data = [
         id: 2,
         name: "AFTEN GÅTUR",
         imgUrl: "/images/Sociale_aktiviteter/Aften_gaatur.png",
+        time: "24. Juli - 19:00",
         creator: {
             creatorImageUrl: "/images/Personer/Anna.png",
             creatorName: "Anna Kristine Olsen"
@@ -25,6 +27,7 @@ const data = [
         id: 3,
         name: "KRABBEFISKERI",
         imgUrl: "/images/Sociale_aktiviteter/Krabbefiskeri.png",
+        time: "24. Juli - 14:00",
         creator: {
             creatorImageUrl: "/images/Personer/Jesper.png",
             creatorName: "Jesper Lund Pedersen"
@@ -36,6 +39,7 @@ const data = [
         id: 4,
         name: "GRILLE SKUMFIDUSER",
         imgUrl: "/images/Sociale_aktiviteter/Skumfiduser.png",
+        time: "24. Juli - 20:00",
         creator: {
             creatorImageUrl: "/images/Personer/Julie.png",
             creatorName: "Julie Maj Næstrup"

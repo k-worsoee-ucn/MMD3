@@ -35,6 +35,7 @@
             <RouterLink v-for="activity in data" class="card" to="/aktivitet" :id="activity.id">
                 <img :src="activity.imgUrl" alt="">
                 <p>{{activity.name}}</p>
+                <p>{{ activity.time }}</p>
                 <div class="peopleJoined">
                     <div class="pjIcon">
                         <img id="per1" src="/images/Personer/Julie.png" alt="">

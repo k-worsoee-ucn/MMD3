@@ -18,6 +18,7 @@
             <img class="creatorIcon" :src="data[id].creator.creatorImageUrl" alt="">
             <h2>{{ data[id].creator.creatorName }}</h2>
             <hr>
+            <p>{{ data[id].time }}</p>
             <p>{{ data[id].desc }}</p>
             <img id="map" :src="data[id].mapUrl" alt="">
         </div>
