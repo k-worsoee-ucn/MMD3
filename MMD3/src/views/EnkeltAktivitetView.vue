@@ -1,14 +1,15 @@
 <script setup>
-    import data from "../assets/activitiesData.js"
+    import data from "@/assets/activitiesData.js"
     const id = sessionStorage.getItem("SelectedActivity") -1
 </script>
 
 <template>
     <main>
-        <a class="back" href="/aktiviteter">
-            <img src="../assets/chevron-left-solid.svg" alt="">
-        </a>
-        <img class="logo" src="../assets/logo_laerkelundenx.svg" alt="">
+        <RouterView />
+        <RouterLink class="back" to="/aktiviteter">
+            <img src="@/assets/chevron-left-solid.svg" alt="">
+        </RouterLink>
+        <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
         <div class="hero">
             <img :src="data[id].imgUrl" alt="">
             <h1>{{ data[id].name }}</h1>

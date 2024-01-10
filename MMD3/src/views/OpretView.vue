@@ -4,10 +4,11 @@
 
 <template>
     <main>
-        <a class="back" href="/aktiviteter">
-            <img src="../assets/chevron-left-solid.svg" alt="">
-        </a>
-        <img class="logo" src="../assets/logo_laerkelundenx.svg" alt="">
+        <RouterView />
+        <RouterLink class="back" to="/aktiviteter">
+            <img src="@/assets/chevron-left-solid.svg" alt="">
+        </RouterLink>
+        <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
         <h1>OPRET AKTIVITET</h1>
         <form>
             <label for="">Navn på aktivitet:</label>

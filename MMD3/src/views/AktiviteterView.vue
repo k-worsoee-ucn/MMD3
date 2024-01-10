@@ -1,6 +1,6 @@
 <script setup>
-    import data from "../assets/activitiesData.js"
-    import campActivities from "../assets/campActivities.js"
+    import data from "@/assets/activitiesData.js"
+    import campActivities from "@/assets/campActivities.js"
     function getID(e) {
         const clickedID = e.target.closest(".card").id
         sessionStorage.setItem("SelectedActivity", clickedID)
@@ -14,10 +14,11 @@
 
 <template>
     <main>
-        <a class="back" href="/">
-            <img src="../assets/chevron-left-solid.svg" alt="">
-        </a>
-        <img class="logo" src="../assets/logo_laerkelundenx.svg" alt="">
+        <RouterView />
+        <RouterLink class="back" to="/">
+            <img src="@/assets/chevron-left-solid.svg" alt="">
+        </RouterLink>
+        <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
         <h1>DAGENS AKTIVITETER</h1>
         <select name="datePicker" id="datePicker">
             <option value="">24. Juli 2024</option>
@@ -31,7 +32,7 @@
         </select>
         <h2>SOCIALE AKTIVITETER</h2>
         <div class="cardHolder" @click="getID">
-            <a v-for="activity in data" class="card" href="/aktivitet" :id="activity.id">
+            <RouterLink v-for="activity in data" class="card" to="/aktivitet" :id="activity.id">
                 <img :src="activity.imgUrl" alt="">
                 <p>{{activity.name}}</p>
                 <div class="peopleJoined">
@@ -42,18 +43,18 @@
                     </div>
                     <p>+6 Flere</p>
                 </div>
-            </a>
+            </RouterLink>
         </div>
         <h2>AKTIVITETER PÅ PLADSEN</h2>
         <div class="cardHolder" id="sec2" @click="getPID">
-            <a v-for="campActivity in campActivities" class="pCard" href="/campingaktivitet" :id="campActivity.id">
+            <RouterLink v-for="campActivity in campActivities" class="pCard" to="/campingaktivitet" :id="campActivity.id">
                 <img :src="campActivity.imgUrl" alt="">
                 <p>{{campActivity.name}}</p>
-            </a>
+            </RouterLink>
         </div>
-        <a class="plusBtn" href="/opretaktivitet">
-           <img src="../assets/plusBtn.svg" alt=""> 
-        </a>
+        <RouterLink class="plusBtn" to="/opretaktivitet">
+           <img src="@/assets/plusBtn.svg" alt=""> 
+        </RouterLink>
         
     </main>
 </template>

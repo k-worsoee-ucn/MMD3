@@ -4,27 +4,28 @@
 
 <template>
     <main>
-        <a class="back" href="/">
-            <img src="../assets/chevron-left-solid.svg" alt="">
-        </a>
-        <img class="logo" src="../assets/logo_laerkelundenx.svg" alt="">
+        <RouterView />
+        <RouterLink class="back" to="/">
+            <img src="@/assets/chevron-left-solid.svg" alt="">
+        </RouterLink>
+        <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
         <h1>Min Profil</h1>
         <img id="profilePic" src="/images/Personer/Martin.png" alt="">
         <div id="info">
             <h2>Martin Lystrup Jensen</h2>
             <p>MartinLJensen@gmail.com</p>
-            <a class="infobtn" href="/mineaktiviteter">
-                <img src="../assets/calendar-solid.svg" alt="">
+            <RouterLink class="infobtn" to="/mineaktiviteter">
+                <img src="@/assets/calendar-solid.svg" alt="">
                 <p>Mine Aktiviteter</p>
-            </a>
-            <a class="infobtn" href="/anmeldelser">
-                <img src="../assets/star-solid.svg" alt="">
+            </RouterLink>
+            <RouterLink class="infobtn" to="/anmeldelser">
+                <img src="@/assets/star-solid.svg" alt="">
                 <p>Mine Anmeldelser</p>
-            </a>
-            <a class="infobtn" href="/">
-                <img src="../assets/logout.svg" alt="">
+            </RouterLink>
+            <RouterLink class="infobtn" to="/">
+                <img src="@/assets/logout.svg" alt="">
                 <p>Log Ud</p>
-            </a>
+            </RouterLink>
         </div>
     </main>
 </template>

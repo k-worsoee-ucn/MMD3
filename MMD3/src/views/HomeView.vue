@@ -4,41 +4,42 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <main>
-    <img class="logo" src="../assets/logo_laerkelundenx.svg" alt="">
+    <RouterView />
+    <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
     <h2>Oplevelser</h2>
     <div class="cardHolder">
-      <a class="card" href="/oplevelser">
+      <RouterLink class="card" to="/oplevelser">
         <img src="/images/Oplevelser/Universe.png" alt="">
         <RouterLink to="/oplevelser">Se alle oplevelser</RouterLink>
-      </a>
+      </RouterLink>
     </div>
     <hr>
     <h2>Aktiviteter</h2>
     <div class="cardHolder">
-      <a class="card" href="/aktiviteter">
+      <RouterLink class="card" to="/aktiviteter">
         <img src="/images/Aktiviteter_paa_pladsen/Lystfiskeri.png" alt="">
         <RouterLink to="/aktiviteter">Se alle aktiviteter</RouterLink>
-      </a>
+      </RouterLink>
     </div>
     <hr>
     <h2>Overnatning</h2>
     <div class="cardHolder">
-      <a class="card ocard" href="/udlejningsvogne">
+      <RouterLink class="card ocard" to="/udlejningsvogne">
         <img src="/images/Camping/Camping1.png" alt="">
         <RouterLink to="/udlejningsvogne">Udlejningsvogne</RouterLink>
-      </a>
-      <a class="card ocard" href="/hytter">
+      </RouterLink>
+      <RouterLink class="card ocard" to="/hytter">
         <img src="/images/Hytter/Hytte1.png" alt="">
         <RouterLink to="/hytter">Hytter</RouterLink>
-      </a>
-      <a class="card ocard" href="/camping">
+      </RouterLink>
+      <RouterLink class="card ocard" to="/camping">
         <img src="/images/Udlejningsvogne/Udlejning1.png" alt="">
         <RouterLink to="/camping">Camping</RouterLink>
-      </a>
+      </RouterLink>
     </div>
   </main>
 
-  <RouterView />
+  
 </template>
 
 <style scoped>

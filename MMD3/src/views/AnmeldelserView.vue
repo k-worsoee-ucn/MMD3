@@ -4,10 +4,11 @@
 
 <template>
     <main>
-        <a class="back" href="/">
-            <img src="../assets/chevron-left-solid.svg" alt="">
-        </a>
-        <img class="logo" src="../assets/logo_laerkelundenx.svg" alt="">
+        <RouterView />
+        <RouterLink class="back" to="/">
+            <img src="@/assets/chevron-left-solid.svg" alt="">
+        </RouterLink>
+        <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
         <h1>Anmeldelser</h1>
         <div class="review">
             <div class="rUser">
@@ -17,11 +18,11 @@
             <hr>
             <div class="rInfo">
                 <div class="rRating">
-                    <img src="../assets/ratingStarFilled.svg" alt="">
-                    <img src="../assets/ratingStarFilled.svg" alt="">
-                    <img src="../assets/ratingStarFilled.svg" alt="">
-                    <img src="../assets/ratingStarFilled.svg" alt="">
-                    <img src="../assets/ratingStarFilled.svg" alt="">
+                    <img src="@/assets/ratingStarFilled.svg" alt="">
+                    <img src="@/assets/ratingStarFilled.svg" alt="">
+                    <img src="@/assets/ratingStarFilled.svg" alt="">
+                    <img src="@/assets/ratingStarFilled.svg" alt="">
+                    <img src="@/assets/ratingStarFilled.svg" alt="">
                 </div>
                 <p class="rText">
                     Lærkelunden Camping har været en fantastisk oplevelse! Børnene elskede hvert øjeblik på dette dejlige sted.
@@ -36,11 +37,11 @@
             <hr>
             <div class="rInfo">
                 <div class="rRating">
-                    <img src="../assets/ratingStarFilled.svg" alt="">
-                    <img src="../assets/ratingStarFilled.svg" alt="">
-                    <img src="../assets/ratingStarFilled.svg" alt="">
-                    <img src="../assets/ratingStarFilled.svg" alt="">
-                    <img src="../assets/ratingStarFilled.svg" alt="">
+                    <img src="@/assets/ratingStarFilled.svg" alt="">
+                    <img src="@/assets/ratingStarFilled.svg" alt="">
+                    <img src="@/assets/ratingStarFilled.svg" alt="">
+                    <img src="@/assets/ratingStarFilled.svg" alt="">
+                    <img src="@/assets/ratingStarFilled.svg" alt="">
                 </div>
                 <p class="rText">
                     Lærkelunden Camping har været en fantastisk oplevelse! Børnene elskede hvert øjeblik på dette dejlige sted.
@@ -55,11 +56,11 @@
             <hr>
             <div class="rInfo">
                 <div class="rRating">
-                    <img src="../assets/ratingStarFilled.svg" alt="">
-                    <img src="../assets/ratingStarFilled.svg" alt="">
-                    <img src="../assets/ratingStarFilled.svg" alt="">
-                    <img src="../assets/ratingStarFilled.svg" alt="">
-                    <img src="../assets/ratingStarFilled.svg" alt="">
+                    <img src="@/assets/ratingStarFilled.svg" alt="">
+                    <img src="@/assets/ratingStarFilled.svg" alt="">
+                    <img src="@/assets/ratingStarFilled.svg" alt="">
+                    <img src="@/assets/ratingStarFilled.svg" alt="">
+                    <img src="@/assets/ratingStarFilled.svg" alt="">
                 </div>
                 <p class="rText">
                     Lærkelunden Camping har været en fantastisk oplevelse! Børnene elskede hvert øjeblik på dette dejlige sted.
@@ -71,11 +72,11 @@
                 <h2>Skriv en anmeldelse</h2>
                 <h3>Score:</h3>
                 <div class="ddRating">
-                    <img src="../assets/ratingStarUnfilled.svg" alt="">
-                    <img src="../assets/ratingStarUnfilled.svg" alt="">
-                    <img src="../assets/ratingStarUnfilled.svg" alt="">
-                    <img src="../assets/ratingStarUnfilled.svg" alt="">
-                    <img src="../assets/ratingStarUnfilled.svg" alt="">
+                    <img src="@/assets/ratingStarUnfilled.svg" alt="">
+                    <img src="@/assets/ratingStarUnfilled.svg" alt="">
+                    <img src="@/assets/ratingStarUnfilled.svg" alt="">
+                    <img src="@/assets/ratingStarUnfilled.svg" alt="">
+                    <img src="@/assets/ratingStarUnfilled.svg" alt="">
                 </div>
                 <h3>Anmeldelse:</h3>
                 <input type="text">

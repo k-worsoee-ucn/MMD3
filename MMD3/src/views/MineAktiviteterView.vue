@@ -4,10 +4,11 @@
 
 <template>
     <main>
-        <a class="back" href="/">
-            <img src="../assets/chevron-left-solid.svg" alt="">
-        </a>
-        <img class="logo" src="../assets/logo_laerkelundenx.svg" alt="">
+        <RouterView />
+        <RouterLink class="back" to="/">
+            <img src="@/assets/chevron-left-solid.svg" alt="">
+        </RouterLink>
+        <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
         <h1>MINE AKTIVITETER</h1>
         <select name="datePicker" id="datePicker">
             <option value="">24. Juli 2024</option>
@@ -46,9 +47,9 @@
             </div>
 
         </div>
-        <a class="plusBtn" href="/opretaktivitet">
-           <img src="../assets/plusBtn.svg" alt=""> 
-        </a>
+        <RouterLink class="plusBtn" to="/opretaktivitet">
+           <img src="@/assets/plusBtn.svg" alt=""> 
+        </RouterLink>
     </main>
 </template>
 

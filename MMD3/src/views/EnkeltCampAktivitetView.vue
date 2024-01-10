@@ -1,14 +1,15 @@
 <script setup>
-    import campActivities from "../assets/campActivities.js"
+    import campActivities from "@/assets/campActivities.js"
     const id = sessionStorage.getItem("SelectedCampActivity") -1
 </script>
 
 <template>
     <main>
-        <a class="back" href="/aktiviteter">
-            <img src="../assets/chevron-left-solid.svg" alt="">
-        </a>
-        <img class="logo" src="../assets/logo_laerkelundenx.svg" alt="">
+        <RouterView />
+        <RouterLink class="back" to="/aktiviteter">
+            <img src="@/assets/chevron-left-solid.svg" alt="">
+        </RouterLink>
+        <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
         <div class="hero">
             <img :src="campActivities[id].imgUrl" alt="">
             <h1>{{ campActivities[id].name }}</h1>

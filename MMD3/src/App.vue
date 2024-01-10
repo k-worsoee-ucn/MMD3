@@ -10,22 +10,22 @@ onUpdated(() => {
 </script>
 
 <template>
+  <RouterView />
   <TheSplashScreen class="splashscreen"></TheSplashScreen>
   <div class="menu">
-    <a id="menuItem1" href="/">
-      <img src="./assets/house-solid.svg" alt="">
-    </a>
-    <a id="menuItem2" href="/anmeldelser">
-      <img src="./assets/star-solid.svg" alt="">
-    </a>
-    <a id="menuItem3" href="/mineaktiviteter">
-      <img src="./assets/calendar-solid.svg" alt="">
-    </a>
-    <a id="menuItem4" href="/myprofile">
-      <img src="./assets/user-solid.svg" alt="">
-    </a>
+    <RouterLink id="menuItem1" to="/">
+      <img src="@/assets/house-solid.svg" alt="">
+    </RouterLink>
+    <RouterLink id="menuItem2" to="/anmeldelser">
+      <img src="@/assets/star-solid.svg" alt="">
+    </RouterLink>
+    <RouterLink id="menuItem3" to="/mineaktiviteter">
+      <img src="@/assets/calendar-solid.svg" alt="">
+    </RouterLink>
+    <RouterLink id="menuItem4" to="/myprofile">
+      <img src="@/assets/user-solid.svg" alt="">
+    </RouterLink>
   </div>
-  <RouterView />
 </template>
 
 <style scoped>

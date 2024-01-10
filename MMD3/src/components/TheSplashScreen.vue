@@ -5,7 +5,7 @@ const firstLoad = sessionStorage.getItem("firstLoad")
 
 <template v-if="firstLoad !== false">
     <div class="splashDiv">
-        <img id="splashLogo" src="../assets/logo_laerkelundenx.svg" alt="">
+        <img id="splashLogo" src="@/assets/logo_laerkelundenx.svg" alt="">
     </div>
 </template>
 
