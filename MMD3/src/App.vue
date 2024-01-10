@@ -15,7 +15,7 @@ onUpdated(() => {
     <a id="menuItem1" href="/">
       <img src="./assets/house-solid.svg" alt="">
     </a>
-    <a id="menuItem2" href="">
+    <a id="menuItem2" href="/anmeldelser">
       <img src="./assets/star-solid.svg" alt="">
     </a>
     <a id="menuItem3" href="/mineaktiviteter">
@@ -39,6 +39,7 @@ onUpdated(() => {
   position: fixed;
   width: 100vw;
   bottom: 0;
+  z-index: 4;
 }
 
 #menuItem1 img, #menuItem2 img, #menuItem3 img, #menuItem4 img {
@@ -86,6 +87,10 @@ body {
 
 .card {
   box-shadow: 1px 1px 4px #000;
+}
+
+.splashScreen {
+  z-index: 5;
 }
 
 @keyframes splash {

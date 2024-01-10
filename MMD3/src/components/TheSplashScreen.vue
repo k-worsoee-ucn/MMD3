@@ -15,6 +15,8 @@ div {
     grid-column: 1/span 9;
 }
 </style>
+
+<!-- Global -->
 <style>
 .splashDiv {
     animation: .5s ease-out;

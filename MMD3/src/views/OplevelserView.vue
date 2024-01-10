@@ -12,58 +12,70 @@
         <h2>Slotte og Kirker</h2>
         <div class="cardHolder">
             <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
+                <img src="/images/Oplevelser/Graasten_slot.png" alt="">
+                <p>GRÅSTEN SLOT</p>
+                <p class="desc">Smukt slot 10 min væk fra Lærkelunden</p>
             </div>
             <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
+                <img src="/images/Oplevelser/Soenderborg_slot.png" alt="">
+                <p>SØNDERBORG SLOT</p>
+                <p class="desc">Historisk slot ca. 30 min væk fra Lærkelunden</p>
             </div>
             <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
+                <img src="/images/Oplevelser/Gottorp_slot.png" alt="">
+                <p>GOTTORP SLOT</p>
+                <p class="desc">Bygget på en ø vest for Slegsvig centrum</p>
             </div>
             <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
+                <img src="/images/Oplevelser/Glucksborg_slot.png" alt="">
+                <p>GLÜCKSBORG SLOT</p>
+                <p class="desc">Et af de vigtigste residensslotte </p>
             </div>
             <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
+                <img src="/images/Oplevelser/Den_gamle_kirke.png" alt="">
+                <p>DEN GAMLE KIRKE</p>
+                <p class="desc">Et af landets 5 ældste kirker</p>
             </div>
         </div>
         <h2>Museer og forlystelser</h2>
         <div class="cardHolder">
             <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
+                <img src="/images/Oplevelser/Historiecenter.png" alt="">
+                <p>HISTORIECENTER DYBBEL BANKE</p>
+                <p class="desc">Om krigen i 1864</p>
+            </div>
+            <div class="card">
+                <img src="/images/Oplevelser/Universe.png" alt="">
+                <p>UNIVERSE</p>
+                <p class="desc">Smukt slot 10 min væk fra Lærkelunden</p>
+            </div>
+            <div class="card">
+                <img src="/images/Oplevelser/Hedeby.png" alt="">
+                <p>HEDEBY</p>
+                <p class="desc">Smukt slot 10 min væk fra Lærkelunden</p>
             </div>
             <div class="card">
                 <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
-            </div>
-            <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
-            </div>
-            <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
+                <p>KRUSMØLLE</p>
+                <p class="desc">Mølle med tilnyttet dejlig café</p>
             </div>
         </div>
         <h2>Sport og natur</h2>
         <div class="cardHolder">
             <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
+                <img src="/images/Oplevelser/Golf.png" alt="">
+                <p>GOLF</p>
+                <p class="desc">Benniksgaards- og  Sønderjyllands Golfklub</p>
             </div>
             <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
+                <img src="/images/Oplevelser/Sti.png" alt="">
+                <p>GENDARMSTIEN</p>
+                <p class="desc">Går lige igennem Lærkelunden 84km</p>
             </div>
             <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
+                <img src="/images/Oplevelser/Fiskesoe.png" alt="">
+                <p>FRUESKOV FISKESØ</p>
+                <p class="desc">Ligger i et naturskønt og roligt område</p>
             </div>
         </div>
     </main>
@@ -109,12 +121,16 @@ h2 {
 .card img {
     width: 100%;
     border-radius: 5px 5px 0 0;
-    aspect-ratio: 16/7;
+    aspect-ratio: 16/9;
     object-fit: cover;
 }
 
 .card p {
     margin-left: 5%;
     font-family: Manrope;
+}
+
+.desc {
+    font-size: .8rem;
 }
 </style>

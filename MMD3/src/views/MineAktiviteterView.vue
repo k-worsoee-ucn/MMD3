@@ -8,7 +8,7 @@
             <img src="../assets/chevron-left-solid.svg" alt="">
         </a>
         <img class="logo" src="../assets/logo_laerkelundenx.svg" alt="">
-        <h1>MINE AKTIVITET</h1>
+        <h1>MINE AKTIVITETER</h1>
         <select name="datePicker" id="datePicker">
             <option value="">24. Juli 2024</option>
             <option value="">25. Juli 2024</option>
@@ -19,6 +19,36 @@
             <option value="">30. Juli 2024</option>
             <option value="">31. Juli 2024</option>
         </select>
+        <div class="cardHolder">
+            <div class="placeHolderCard">
+                <p>Ingen aktiviteter</p>
+            </div>
+            <div class="placeHolderCard">
+                <p>Ingen aktiviteter</p>
+            </div>
+            <div class="placeHolderCard">
+                <p>Ingen aktiviteter</p>
+            </div>
+            <div class="placeHolderCard">
+                <p>Ingen aktiviteter</p>
+            </div>
+            <div class="placeHolderCard">
+                <p>Ingen aktiviteter</p>
+            </div>
+            <div class="placeHolderCard">
+                <p>Ingen aktiviteter</p>
+            </div>
+            <div class="placeHolderCard">
+                <p>Ingen aktiviteter</p>
+            </div>
+            <div class="placeHolderCard">
+                <p>Ingen aktiviteter</p>
+            </div>
+
+        </div>
+        <a class="plusBtn" href="/opretaktivitet">
+           <img src="../assets/plusBtn.svg" alt=""> 
+        </a>
     </main>
 </template>
 
@@ -45,5 +75,40 @@ h1 {
     width: 70%;
     padding: 5%;
     border-radius: 5px;
+    margin-bottom: 15%;
 }
+
+h2 {
+    grid-column: 2/span 7;
+    font-family: Manrope;
+}
+
+.cardHolder {
+    grid-column: 2/span 7;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5%;
+    padding-bottom: 15%;
+    height: 50vh;
+}
+
+.placeHolderCard {
+    background-color: #FFF;
+    border-radius: 5px;
+    grid-column: span 3;
+    box-shadow: 1px 1px 4px #000;
+}
+
+.placeHolderCard p {
+    font-family: Manrope;
+    text-align: center;
+    margin: auto;
+}
+
+.plusBtn {
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+}
+
 </style>

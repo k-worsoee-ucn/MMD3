@@ -7,34 +7,34 @@ import { RouterLink, RouterView } from 'vue-router'
     <img class="logo" src="../assets/logo_laerkelundenx.svg" alt="">
     <h2>Oplevelser</h2>
     <div class="cardHolder">
-      <div class="card">
-        <img src="https://unsplash.it/400" alt="">
+      <a class="card" href="/oplevelser">
+        <img src="/images/Oplevelser/Universe.png" alt="">
         <RouterLink to="/oplevelser">Se alle oplevelser</RouterLink>
-      </div>
+      </a>
     </div>
     <hr>
     <h2>Aktiviteter</h2>
     <div class="cardHolder">
-      <div class="card">
-        <img src="https://unsplash.it/400" alt="">
+      <a class="card" href="/aktiviteter">
+        <img src="/images/Aktiviteter_paa_pladsen/Lystfiskeri.png" alt="">
         <RouterLink to="/aktiviteter">Se alle aktiviteter</RouterLink>
-      </div>
+      </a>
     </div>
     <hr>
     <h2>Overnatning</h2>
     <div class="cardHolder">
-      <div class="card ocard">
-        <img src="https://unsplash.it/400" alt="">
+      <a class="card ocard" href="/udlejningsvogne">
+        <img src="/images/Camping/Camping1.png" alt="">
         <RouterLink to="/udlejningsvogne">Udlejningsvogne</RouterLink>
-      </div>
-      <div class="card ocard">
-        <img src="https://unsplash.it/400" alt="">
+      </a>
+      <a class="card ocard" href="/hytter">
+        <img src="/images/Hytter/Hytte1.png" alt="">
         <RouterLink to="/hytter">Hytter</RouterLink>
-      </div>
-      <div class="card ocard">
-        <img src="https://unsplash.it/400" alt="">
+      </a>
+      <a class="card ocard" href="/camping">
+        <img src="/images/Udlejningsvogne/Udlejning1.png" alt="">
         <RouterLink to="/camping">Camping</RouterLink>
-      </div>
+      </a>
     </div>
   </main>
 
@@ -72,6 +72,7 @@ hr {
   background-color: #FFF;
   border-radius: 5px;
   grid-column: span 7;
+  text-decoration: none;
 }
 
 .ocard {

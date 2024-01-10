@@ -12,6 +12,8 @@
         <form>
             <label for="">Navn på aktivitet:</label>
             <input type="text" name="aName" id="aName">
+            <label for="">Tidspunkt:</label>
+            <input type="datetime-local" name="aDT" id="aDT">
             <label for="">Beskrivelse af aktivitet: </label>
             <input type="text" name="aDesc" id="aDesc">
             <label for="">Tilføj billede</label>
@@ -40,17 +42,19 @@ h1 {
 }
 
 #aDesc {
-    
+    height: 20vh;
 }
 
 form {
     grid-column: 2/span 7;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 5%;
 }
 
 form label {
-    margin: 15% 0 0 0;
+    margin: 15% 0 2% 0;
+    font-family: Manrope;
 }
 
 form label, form input {
@@ -58,7 +62,7 @@ form label, form input {
 }
 
 button {
-    height: 50%;
+    height: 7vh;
     grid-column: 2/span 7;
     background-color: #F97F0E;
     color: #FFF;

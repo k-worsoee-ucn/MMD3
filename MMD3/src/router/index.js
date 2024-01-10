@@ -57,6 +57,21 @@ const router = createRouter({
       name: 'mineaktiviteter',
       component: () => import('../views/MineAktiviteterView.vue')
     },
+    {
+      path: '/anmeldelser',
+      name: 'anmeldelser',
+      component: () => import('../views/AnmeldelserView.vue')
+    },
+    {
+      path: '/aktivitet',
+      name: 'aktivitet',
+      component: () => import('../views/EnkeltAktivitetView.vue')
+    },
+    {
+      path: '/campingaktivitet',
+      name: 'campingaktivitet',
+      component: () => import('../views/EnkeltCampAktivitetView.vue')
+    },
   ]
 })
 

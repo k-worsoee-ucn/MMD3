@@ -1,4 +1,14 @@
 <script setup>
+    import data from "../assets/activitiesData.js"
+    import campActivities from "../assets/campActivities.js"
+    function getID(e) {
+        const clickedID = e.target.closest(".card").id
+        sessionStorage.setItem("SelectedActivity", clickedID)
+    }
+    function getPID(e) {
+        const clickedPID = e.target.closest(".pCard").id
+        sessionStorage.setItem("SelectedCampActivity", clickedPID)
+    }
 
 </script>
 
@@ -20,90 +30,26 @@
             <option value="">31. Juli 2024</option>
         </select>
         <h2>SOCIALE AKTIVITETER</h2>
-        <div class="cardHolder">
-            <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
+        <div class="cardHolder" @click="getID">
+            <a v-for="activity in data" class="card" href="/aktivitet" :id="activity.id">
+                <img :src="activity.imgUrl" alt="">
+                <p>{{activity.name}}</p>
                 <div class="peopleJoined">
                     <div class="pjIcon">
-                        <img id="per1" src="https://api.dicebear.com/7.x/personas/svg" alt="">
-                        <img id="per2" src="https://api.dicebear.com/7.x/personas/svg" alt="">
-                        <img id="per3" src="https://api.dicebear.com/7.x/personas/svg" alt="">
+                        <img id="per1" src="/images/Personer/Julie.png" alt="">
+                        <img id="per2" src="/images/Personer/Martin.png" alt="">
+                        <img id="per3" src="/images/Personer/Jesper.png" alt="">
                     </div>
                     <p>+6 Flere</p>
                 </div>
-            </div>
-            <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
-                <div class="peopleJoined">
-                    <div class="pjIcon">
-                        <img id="per1" src="https://api.dicebear.com/7.x/personas/svg" alt="">
-                        <img id="per2" src="https://api.dicebear.com/7.x/personas/svg" alt="">
-                        <img id="per3" src="https://api.dicebear.com/7.x/personas/svg" alt="">
-                    </div>
-                    <p>+6 Flere</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
-                <div class="peopleJoined">
-                    <div class="pjIcon">
-                        <img id="per1" src="https://api.dicebear.com/7.x/personas/svg" alt="">
-                        <img id="per2" src="https://api.dicebear.com/7.x/personas/svg" alt="">
-                        <img id="per3" src="https://api.dicebear.com/7.x/personas/svg" alt="">
-                    </div>
-                    <p>+6 Flere</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
-                <div class="peopleJoined">
-                    <div class="pjIcon">
-                        <img id="per1" src="https://api.dicebear.com/7.x/personas/svg" alt="">
-                        <img id="per2" src="https://api.dicebear.com/7.x/personas/svg" alt="">
-                        <img id="per3" src="https://api.dicebear.com/7.x/personas/svg" alt="">
-                    </div>
-                    <p>+6 Flere</p>
-                </div>
-            </div>
+            </a>
         </div>
         <h2>AKTIVITETER PÅ PLADSEN</h2>
-        <div class="cardHolder" id="sec2">
-            <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
-            </div>
-            <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
-            </div>
-            <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
-            </div>
-            <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
-            </div>
-            <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
-            </div>
-            <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
-            </div>
-            <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
-            </div>
-            <div class="card">
-                <img src="https://unsplash.it/400" alt="">
-                <p>Oplevelse navn</p>
-            </div>
+        <div class="cardHolder" id="sec2" @click="getPID">
+            <a v-for="campActivity in campActivities" class="pCard" href="/campingaktivitet" :id="campActivity.id">
+                <img :src="campActivity.imgUrl" alt="">
+                <p>{{campActivity.name}}</p>
+            </a>
         </div>
         <a class="plusBtn" href="/opretaktivitet">
            <img src="../assets/plusBtn.svg" alt=""> 
@@ -149,23 +95,46 @@ h2 {
     padding-bottom: 15%;
 }
 
-.card {
+.card, .pCard {
     background-color: #FFF;
     border-radius: 5px;
     grid-column: span 3;
     box-shadow: 1px 1px 4px #000;
+    text-decoration: none;
+    color: #000;
 }
 
-.card img {
+.pCard {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.card img, .pCard img {
     width: 100%;
     border-radius: 5px 5px 0 0;
-    aspect-ratio: 16/7;
+    aspect-ratio: 16/9;
     object-fit: cover;
+}
+
+.pCard img {
+    grid-row: 1;
+    grid-column: 1;
+    filter: brightness(80%);
 }
 
 .card > p {
     margin: 0 0 0 5%;
     font-family: Manrope;
+}
+
+.pCard p {
+    margin: 0 0 0 5%;
+    font-family: Manrope;
+    grid-row: 1;
+    grid-column: 1;
+    color: #FFF;
+    margin-top: auto;
+    filter: brightness(100%);
 }
 
 .peopleJoined {
@@ -189,9 +158,10 @@ grid-template-columns: repeat(3,1fr);
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
-    border-radius: 25px;
+    border-radius: 50%;
     margin: auto 0;
-    box-shadow: 1px 1px 4px #000;
+    background-color: #FFF;
+    padding: 10%;
 }
 
 #per1 {

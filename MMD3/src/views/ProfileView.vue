@@ -9,16 +9,22 @@
         </a>
         <img class="logo" src="../assets/logo_laerkelundenx.svg" alt="">
         <h1>Min Profil</h1>
-        <img id="profilePic" src="https://unsplash.it/400/400" alt="">
+        <img id="profilePic" src="/images/Personer/Martin.png" alt="">
         <div id="info">
-            <h2>Fulde navn</h2>
-            <p>Adam Jensen</p>
-            <h2>Email</h2>
-            <p>AJensen@gmail.com</p>
-            <h2>Fødselsdag</h2>
-            <p>01/01/1999</p>
-            <h2>Køn</h2>
-            <p>Mand</p>
+            <h2>Martin Lystrup Jensen</h2>
+            <p>MartinLJensen@gmail.com</p>
+            <a class="infobtn" href="/mineaktiviteter">
+                <img src="../assets/calendar-solid.svg" alt="">
+                <p>Mine Aktiviteter</p>
+            </a>
+            <a class="infobtn" href="/anmeldelser">
+                <img src="../assets/star-solid.svg" alt="">
+                <p>Mine Anmeldelser</p>
+            </a>
+            <a class="infobtn" href="/">
+                <img src="../assets/logout.svg" alt="">
+                <p>Log Ud</p>
+            </a>
         </div>
     </main>
 </template>
@@ -48,23 +54,45 @@ h1 {
     font-family: Manrope;
     grid-column: 2/span 7;
 }
+
+.infobtn {
+    grid-column: 2/span 7;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    border-radius: 5px;
+    margin-bottom: 5%;
+    text-decoration: none;
+}
+
+.infobtn img {
+    width: 50%;
+    margin: auto;
+}
+
+.infobtn p {
+    margin: auto 0;
+    color: #000;
+}
+
 #info {
     grid-column: 1/span 9;
     background-image: linear-gradient(to right, #B5D6F2 , #EAF1F8, #B5D6F2);
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     margin-top: -50%;
-    padding: 50% 0 15% 0;
-}
-
-#info p {
-    margin-top: 0;
-    background-color: #FFF;
-    padding: 2%;
+    padding: 40% 0 15% 0;
 }
 
 #info h2 {
     font-size: 1rem;
+    grid-column: 1/span 9;
+    text-align: center;
+}
+
+#info p {
+    grid-column: 1/span 9;
+    text-align: center;
 }
 
 #info h2, #info p {
