@@ -4,7 +4,7 @@ const firstLoadCheckWord = "false"
 
 </script>
 
-<template v-if="firstLoad !== firstLoadCheckWord">
+<template v-if="screenWidth <= 1024 || sessionStorage.getItem('firstLoad') !== firstLoadCheckWord">
     <div class="splashDiv">
         <img id="splashLogo" src="@/assets/logo_laerkelundenx.svg" alt="">
     </div>

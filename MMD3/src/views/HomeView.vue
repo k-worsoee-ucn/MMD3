@@ -1,10 +1,17 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import TheSplashScreen from '../components/TheSplashScreen.vue';
+import { onUpdated } from 'vue';
 
 const screenWidth = window.screen.width
+
+onUpdated(() => {
+  sessionStorage.setItem("firstLoad", false)
+})
 </script>
 
 <template>
+  <TheSplashScreen class="splashscreen"></TheSplashScreen>
   <main v-if="screenWidth >= 1025" >
     <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
     <h1>Besøg vores webapp på din telefon eller tablet</h1>

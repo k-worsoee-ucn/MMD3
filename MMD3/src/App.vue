@@ -1,6 +1,5 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import TheSplashScreen from './components/TheSplashScreen.vue';
 import { onUpdated } from 'vue';
 
 const screenWidth = window.screen.width
@@ -12,7 +11,6 @@ onUpdated(() => {
 </script>
 
 <template>
-  <TheSplashScreen v-if="screenWidth <= 1024" class="splashscreen"></TheSplashScreen>
   <RouterView />
   <div v-if="screenWidth <= 1024" class="menu">
     <RouterLink id="menuItem1" to="/">
