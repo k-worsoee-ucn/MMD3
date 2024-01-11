@@ -3,6 +3,8 @@ import { RouterLink, RouterView } from 'vue-router'
 import TheSplashScreen from './components/TheSplashScreen.vue';
 import { onUpdated } from 'vue';
 
+const screenWidth = window.screen.width
+
 onUpdated(() => {
   sessionStorage.setItem("firstLoad", false)
 })
@@ -11,8 +13,8 @@ onUpdated(() => {
 
 <template>
   <RouterView />
-  <TheSplashScreen class="splashscreen"></TheSplashScreen>
-  <div class="menu">
+  <TheSplashScreen v-if="screenWidth <= 1024" class="splashscreen"></TheSplashScreen>
+  <div v-if="screenWidth <= 1024" class="menu">
     <RouterLink id="menuItem1" to="/">
       <img src="@/assets/house-solid.svg" alt="">
     </RouterLink>
@@ -29,68 +31,159 @@ onUpdated(() => {
 </template>
 
 <style scoped>
-.menu {
-  grid-column: 1/span 9;
-  display: grid;
-  grid-template-columns: 5% repeat(4, 1fr) 5%;
-  background-color: #B1D8F8;
-  padding: 2% 0;
-  border-radius: 15px 15px 0 0;
-  position: fixed;
-  width: 100vw;
-  bottom: 0;
-  z-index: 4;
+@media screen and (max-width: 640px) {
+  .menu {
+    grid-column: 1/span 9;
+    display: grid;
+    grid-template-columns: 5% repeat(4, 1fr) 5%;
+    background-color: #B1D8F8;
+    padding: 2% 0;
+    border-radius: 15px 15px 0 0;
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    z-index: 4;
+  }
+
+  #menuItem1 img,
+  #menuItem2 img,
+  #menuItem3 img,
+  #menuItem4 img {
+    width: 35%;
+    height: 100%;
+    margin: auto 25%;
+    filter: invert(100%);
+    padding: 5% 0;
+  }
+
+  #menuItem1 {
+    grid-column: 2;
+  }
+
+  main h2 {
+    grid-column: 2/span 7;
+    font-family: Manrope;
+  }
+
+  header,
+  main {
+    grid-column: 1/span 9;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+  }
+
 }
 
-#menuItem1 img, #menuItem2 img, #menuItem3 img, #menuItem4 img {
-  width: 35%;
-  height: 100%;
-  margin: auto 25%;
-  filter: invert(100%);
-  padding: 5% 0;
-}
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  .menu {
+    grid-column: 1/span 9;
+    display: grid;
+    grid-template-columns: 20% repeat(4, 1fr) 20%;
+    background-color: #B1D8F8;
+    padding: 2% 0;
+    border-radius: 15px 15px 0 0;
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    z-index: 4;
+  }
 
-#menuItem1 {
- grid-column: 2;
-}
+  #menuItem1 img,
+  #menuItem2 img,
+  #menuItem3 img,
+  #menuItem4 img {
+    width: 35%;
+    height: 100%;
+    margin: auto 25%;
+    filter: invert(100%);
+    padding: 5% 0;
+  }
 
-main h2 {
-  grid-column: 2/span 7;
-  font-family: Manrope;
-}
+  #menuItem1 {
+    grid-column: 2;
+  }
 
-header,
-main {
-  grid-column: 1/span 9;
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
+  main h2 {
+    grid-column: 2/span 7;
+    font-family: Manrope;
+  }
+
+  header,
+  main {
+    grid-column: 1/span 9;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+  }
+
 }
 </style>
 
 <!-- Global -->
 <style>
-#app {
-  background-color: #E5F4FF;
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  min-height: 100vh;
-  padding-bottom: 15%;
+@media screen and (min-width: 1025px) {
+  body {
+    margin: 0;
+    background-color: #E5F4FF;
+  }
+  
+  #app {
+    display: grid;
+    grid-template-columns: repeat(14,1fr);
+  }
 }
 
-.hiddenElement {
-  display: none;
+@media screen and (max-width: 640px) {
+  #app {
+    background-color: #E5F4FF;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    min-height: 100vh;
+    padding-bottom: 15%;
+  }
+
+  .hiddenElement {
+    display: none;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .card {
+    box-shadow: 1px 1px 4px #000;
+  }
+
+  .splashScreen {
+    z-index: 5;
+  }
+
 }
 
-body {
-  margin: 0;
-}
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  #app {
+    background-color: #E5F4FF;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    min-height: 100vh;
+    padding-bottom: 15%;
+  }
 
-.card {
-  box-shadow: 1px 1px 4px #000;
-}
+  .hiddenElement {
+    display: none;
+  }
 
-.splashScreen {
-  z-index: 5;
+  body {
+    margin: 0;
+  }
+
+  .card {
+    box-shadow: 1px 1px 4px #000;
+  }
+
+  .splashScreen {
+    z-index: 5;
+  }
+
 }
 
 @keyframes splash {

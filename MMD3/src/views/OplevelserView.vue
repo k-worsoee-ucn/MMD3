@@ -1,5 +1,5 @@
 <script setup>
-    sessionStorage.setItem("firstLoad", false)
+sessionStorage.setItem("firstLoad", false)
 </script>
 
 <template>
@@ -66,7 +66,7 @@
             <div class="card">
                 <img src="/images/Oplevelser/Golf.png" alt="">
                 <p>GOLF</p>
-                <p class="desc">Benniksgaards- og  Sønderjyllands Golfklub</p>
+                <p class="desc">Benniksgaards- og Sønderjyllands Golfklub</p>
             </div>
             <div class="card">
                 <img src="/images/Oplevelser/Sti.png" alt="">
@@ -83,55 +83,115 @@
 </template>
 
 <style scoped>
-.logo {
-    grid-column: 4/span 3;
-    margin: auto;
-    width: 100%;
+@media screen and (max-width: 640px) {
+    .logo {
+        grid-column: 4/span 3;
+        margin: auto;
+        width: 100%;
+    }
+
+    .back {
+        width: 50%;
+        margin: 25% auto;
+    }
+
+    h1 {
+        grid-row: 2;
+        font-family: Manrope;
+        grid-column: 2/span 7;
+    }
+
+    h2 {
+        font-family: Manrope;
+        grid-column: 2/span 7;
+    }
+
+    .cardHolder {
+        grid-column: 2/span 7;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 5%;
+        margin-bottom: 20%;
+    }
+
+    .card {
+        background-color: #FFF;
+        border-radius: 5px;
+        grid-column: span 3;
+        box-shadow: 1px 1px 4px #000;
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+    }
+
+    .card p {
+        margin-left: 5%;
+        font-family: Manrope;
+    }
+
+    .desc {
+        font-size: .8rem;
+    }
+
 }
 
-.back {
-    width: 50%;
-    margin: 25% auto;
-}
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+    .logo {
+        grid-column: 4/span 3;
+        margin: auto;
+        width: 100%;
+    }
 
-h1 {
-    grid-row: 2;
-    font-family: Manrope;
-    grid-column: 2/span 7;
-}
+    .back {
+        width: 33%;
+        margin: 25% auto;
+    }
 
-h2 {
-    font-family: Manrope;
-    grid-column: 2/span 7;
-}
-.cardHolder {
-    grid-column: 2/span 7;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 5%;
-    margin-bottom: 20%;
-}
+    h1 {
+        grid-row: 2;
+        font-family: Manrope;
+        grid-column: 2/span 7;
+    }
 
-.card {
-    background-color: #FFF;
-    border-radius: 5px;
-    grid-column: span 3;
-    box-shadow: 1px 1px 4px #000;
-}
+    h2 {
+        font-family: Manrope;
+        grid-column: 2/span 7;
+    }
 
-.card img {
-    width: 100%;
-    border-radius: 5px 5px 0 0;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-}
+    .cardHolder {
+        grid-column: 2/span 7;
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        gap: 5%;
+        margin-bottom: 20%;
+    }
 
-.card p {
-    margin-left: 5%;
-    font-family: Manrope;
-}
+    .card {
+        background-color: #FFF;
+        border-radius: 5px;
+        grid-column: span 3;
+        box-shadow: 1px 1px 4px #000;
+    }
 
-.desc {
-    font-size: .8rem;
+    .card img {
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+    }
+
+    .card p {
+        margin-left: 5%;
+        font-family: Manrope;
+    }
+
+    .desc {
+        font-size: .8rem;
+    }
+
 }
 </style>

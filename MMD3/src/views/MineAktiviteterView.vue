@@ -48,68 +48,133 @@
 
         </div>
         <RouterLink class="plusBtn" to="/opretaktivitet">
-           <img src="@/assets/plusBtn.svg" alt=""> 
+            <img src="@/assets/plusBtn.svg" alt="">
         </RouterLink>
     </main>
 </template>
 
 <style scoped>
-.logo {
-    grid-column: 4/span 3;
-    margin: auto;
-    width: 100%;
+@media screen and (max-width: 640px) {
+    .logo {
+        grid-column: 4/span 3;
+        margin: auto;
+        width: 100%;
+    }
+
+    .back {
+        width: 50%;
+        margin: 25% auto;
+    }
+
+    h1 {
+        grid-row: 2;
+        font-family: Manrope;
+        grid-column: 2/span 3;
+    }
+
+    #datePicker {
+        grid-column: 2/span 5;
+        width: 70%;
+        padding: 5%;
+        border-radius: 5px;
+        margin-bottom: 15%;
+    }
+
+    h2 {
+        grid-column: 2/span 7;
+        font-family: Manrope;
+    }
+
+    .cardHolder {
+        grid-column: 2/span 7;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 5%;
+        padding-bottom: 15%;
+        height: 50vh;
+    }
+
+    .placeHolderCard {
+        background-color: #FFF;
+        border-radius: 5px;
+        grid-column: span 3;
+        box-shadow: 1px 1px 4px #000;
+    }
+
+    .placeHolderCard p {
+        font-family: Manrope;
+        text-align: center;
+        margin: auto;
+    }
+
+    .plusBtn {
+        position: fixed;
+        bottom: 10%;
+        right: 5%;
+    }
 }
 
-.back {
-    width: 50%;
-    margin: 25% auto;
-}
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+    .logo {
+        grid-column: 4/span 3;
+        margin: auto;
+        width: 100%;
+    }
 
-h1 {
-    grid-row: 2;
-    font-family: Manrope;
-    grid-column: 2/span 3;
-}
+    .back {
+        width: 33%;
+        margin: 25% auto;
+    }
 
-#datePicker {
-    grid-column: 2/span 5;
-    width: 70%;
-    padding: 5%;
-    border-radius: 5px;
-    margin-bottom: 15%;
-}
+    h1 {
+        grid-row: 2;
+        font-family: Manrope;
+        grid-column: 2/span 3;
+        font-size: 3rem;
+    }
 
-h2 {
-    grid-column: 2/span 7;
-    font-family: Manrope;
-}
+    #datePicker {
+        grid-column: 2/span 5;
+        width: 70%;
+        padding: 5%;
+        border-radius: 5px;
+        margin-bottom: 15%;
+        font-size: 1.5rem;
+    }
 
-.cardHolder {
-    grid-column: 2/span 7;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 5%;
-    padding-bottom: 15%;
-    height: 50vh;
-}
+    h2 {
+        grid-column: 2/span 7;
+        font-family: Manrope;
+        font-size: 2rem;
+    }
 
-.placeHolderCard {
-    background-color: #FFF;
-    border-radius: 5px;
-    grid-column: span 3;
-    box-shadow: 1px 1px 4px #000;
-}
+    .cardHolder {
+        grid-column: 2/span 7;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 5%;
+        padding-bottom: 15%;
+        height: 50vh;
+    }
 
-.placeHolderCard p {
-    font-family: Manrope;
-    text-align: center;
-    margin: auto;
-}
+    .placeHolderCard {
+        background-color: #FFF;
+        border-radius: 5px;
+        grid-column: span 3;
+        box-shadow: 1px 1px 4px #000;
+    }
 
-.plusBtn {
-    position: fixed;
-    bottom: 10%;
-    right: 5%;
-}
+    .placeHolderCard p {
+        font-family: Manrope;
+        text-align: center;
+        margin: auto;
+        font-size: 1.2rem;
+    }
 
+    .plusBtn {
+        position: fixed;
+        bottom: 10%;
+        right: 5%;
+    }
+}
 </style>
