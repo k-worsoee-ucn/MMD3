@@ -1,9 +1,10 @@
 <script setup>
 const firstLoad = sessionStorage.getItem("firstLoad")
+const firstLoadCheckWord = "false"
 
 </script>
 
-<template v-if="firstLoad !== false">
+<template v-if="firstLoad !== firstLoadCheckWord">
     <div class="splashDiv">
         <img id="splashLogo" src="@/assets/logo_laerkelundenx.svg" alt="">
     </div>

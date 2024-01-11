@@ -12,8 +12,8 @@ onUpdated(() => {
 </script>
 
 <template>
-  <RouterView />
   <TheSplashScreen v-if="screenWidth <= 1024" class="splashscreen"></TheSplashScreen>
+  <RouterView />
   <div v-if="screenWidth <= 1024" class="menu">
     <RouterLink id="menuItem1" to="/">
       <img src="@/assets/house-solid.svg" alt="">
