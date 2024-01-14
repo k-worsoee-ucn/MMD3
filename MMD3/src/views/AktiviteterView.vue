@@ -1,6 +1,8 @@
 <script setup>
+import { onMounted } from "vue";
 import data from "@/assets/activitiesData.js"
 import campActivities from "@/assets/campActivities.js"
+import TheHeader from "@/components/TheHeader.vue"
 function getID(e) {
     const clickedID = e.target.closest(".card").id
     sessionStorage.setItem("SelectedActivity", clickedID)
@@ -10,37 +12,46 @@ function getPID(e) {
     sessionStorage.setItem("SelectedCampActivity", clickedPID)
 }
 
+onMounted(() => {
+  const menuItem1 = document.querySelector("#menuItem1")
+  const menuItem2 = document.querySelector("#menuItem2")
+  const menuItem3 = document.querySelector("#menuItem3")
+  const menuItem4 = document.querySelector("#menuItem4")
+  const menuItem5 = document.querySelector("#menuItem5")
+  menuItem1.classList.remove("currentItem")
+  menuItem2.classList.add("currentItem")
+  menuItem3.classList.remove("currentItem")
+  menuItem4.classList.remove("currentItem")
+  menuItem5.classList.remove("currentItem")
+})
+
 </script>
 
 <template>
     <main>
         <RouterView />
         <RouterLink class="back" to="/">
-            <img src="@/assets/chevron-left-solid.svg" alt="">
+            <img src="@/assets/chevron-left-solid.svg" alt="Tilbage">
         </RouterLink>
-        <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
-        <h1>DAGENS AKTIVITETER</h1>
-        <select name="datePicker" id="datePicker">
-            <option value="">24. Juli 2024</option>
-            <option value="">25. Juli 2024</option>
-            <option value="">26. Juli 2024</option>
-            <option value="">27. Juli 2024</option>
-            <option value="">28. Juli 2024</option>
-            <option value="">29. Juli 2024</option>
-            <option value="">30. Juli 2024</option>
-            <option value="">31. Juli 2024</option>
-        </select>
+        <TheHeader></TheHeader>
+        <h1>AKTIVITETER</h1>
+        <div class="toFromDate">
+            <h3>Fra:</h3>
+            <input type="date" name="" id="" value="2024-07-24">
+            <h3>Til:</h3>
+            <input type="date" name="" id="" value="2024-07-25">
+        </div>
         <h2>SOCIALE AKTIVITETER</h2>
         <div class="cardHolder" @click="getID">
             <RouterLink v-for="activity in data" class="card" to="/aktivitet" :id="activity.id">
                 <img :src="activity.imgUrl" alt="">
-                <p>{{ activity.name }}</p>
-                <p>{{ activity.time }}</p>
+                <p class="aName">{{ activity.name }}</p>
+                <p class="aTime">{{ activity.time }}</p>
                 <div class="peopleJoined">
                     <div class="pjIcon">
-                        <img id="per1" src="/images/Personer/Julie.png" alt="">
-                        <img id="per2" src="/images/Personer/Martin.png" alt="">
-                        <img id="per3" src="/images/Personer/Jesper.png" alt="">
+                        <img id="per1" src="/images/Personer/Julie.png" alt="profilbillede">
+                        <img id="per2" src="/images/Personer/Martin.png" alt="profilbillede">
+                        <img id="per3" src="/images/Personer/Jesper.png" alt="profilbillede">
                     </div>
                     <p>+6 Flere</p>
                 </div>
@@ -49,12 +60,12 @@ function getPID(e) {
         <h2>AKTIVITETER PÅ PLADSEN</h2>
         <div class="cardHolder" id="sec2" @click="getPID">
             <RouterLink v-for="campActivity in campActivities" class="pCard" to="/campingaktivitet" :id="campActivity.id">
-                <img :src="campActivity.imgUrl" alt="">
+                <img :src="campActivity.imgUrl" alt="Billede af aktivitet">
                 <p>{{ campActivity.name }}</p>
             </RouterLink>
         </div>
         <RouterLink class="plusBtn" to="/opretaktivitet">
-            <img src="@/assets/plusBtn.svg" alt="">
+            <img src="@/assets/plusBtn.svg" alt="Tilføj aktivitet">
         </RouterLink>
 
     </main>
@@ -62,10 +73,23 @@ function getPID(e) {
 
 <style scoped>
 @media screen and (max-width: 640px) {
-    .logo {
-        grid-column: 4/span 3;
+    .toFromDate {
+        grid-column: 2/span 7;
+        display: grid;
+        grid-template-columns: 10% 1fr 10% 1fr;
+    }
+
+    .toFromDate input {
+        padding: 1%;
+        border-radius: 5px;
+        width: 80%;
+        height: fit-content;
         margin: auto;
-        width: 100%;
+        font-family: Manrope;
+    }
+
+    .toFromDate h3 {
+        font-family: Manrope;
     }
 
     .back {
@@ -77,13 +101,6 @@ function getPID(e) {
         grid-row: 2;
         font-family: Manrope;
         grid-column: 2/span 7;
-    }
-
-    #datePicker {
-        grid-column: 2/span 5;
-        width: 70%;
-        padding: 5%;
-        border-radius: 5px;
     }
 
     h2 {
@@ -129,7 +146,6 @@ function getPID(e) {
     }
 
     .card>p {
-        margin: 0 0 0 5%;
         font-family: Manrope;
     }
 
@@ -141,6 +157,12 @@ function getPID(e) {
         color: #FFF;
         margin-top: auto;
         filter: brightness(100%);
+    }
+
+    .aTime,
+    .aName {
+        text-align: center;
+        margin: 0;
     }
 
     .peopleJoined {
@@ -194,13 +216,8 @@ function getPID(e) {
     }
 
 }
-@media screen and (min-width: 641px) and (max-width: 1024px) {
-    .logo {
-        grid-column: 4/span 3;
-        margin: auto;
-        width: 100%;
-    }
 
+@media screen and (min-width: 641px) and (max-width: 1024px) {
     .back {
         width: 33%;
         margin: 25% auto;
@@ -213,12 +230,25 @@ function getPID(e) {
         font-size: 2.5rem;
     }
 
-    #datePicker {
-        grid-column: 2/span 5;
-        width: 70%;
-        padding: 5%;
+    .toFromDate {
+        grid-column: 2/span 7;
+        display: grid;
+        grid-template-columns: 10% 1fr 10% 1fr;
+    }
+
+    .toFromDate input {
+        padding: 1%;
         border-radius: 5px;
-        font-size: 1.2rem;
+        width: 80%;
+        height: fit-content;
+        margin: auto;
+        font-family: Manrope;
+        font-size: 1.5rem;
+    }
+
+    .toFromDate h3 {
+        font-family: Manrope;
+        font-size: 2rem;
     }
 
     h2 {

@@ -1,32 +1,75 @@
 <script setup>
+import {ref, onMounted} from "vue"
 import campActivities from "@/assets/campActivities.js"
+import TheHeader from "@/components/TheHeader.vue"
 const id = sessionStorage.getItem("SelectedCampActivity") - 1
+
+const showMap = ref(false)
+
+onMounted(() => {
+  const menuItem1 = document.querySelector("#menuItem1")
+  const menuItem2 = document.querySelector("#menuItem2")
+  const menuItem3 = document.querySelector("#menuItem3")
+  const menuItem4 = document.querySelector("#menuItem4")
+  const menuItem5 = document.querySelector("#menuItem5")
+  menuItem1.classList.remove("currentItem")
+  menuItem2.classList.add("currentItem")
+  menuItem3.classList.remove("currentItem")
+  menuItem4.classList.remove("currentItem")
+  menuItem5.classList.remove("currentItem")
+})
+
+
 </script>
 
 <template>
     <main>
         <RouterView />
         <RouterLink class="back" to="/aktiviteter">
-            <img src="@/assets/chevron-left-solid.svg" alt="">
+            <img src="@/assets/chevron-left-solid.svg" alt="Tilbage">
         </RouterLink>
-        <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
+        <TheHeader></TheHeader>
         <div class="hero">
-            <img :src="campActivities[id].imgUrl" alt="">
+            <img :src="campActivities[id].imgUrl" alt="Billede af aktivitet">
             <h1>{{ campActivities[id].name }}</h1>
         </div>
         <div class="activity">
             <p>{{ campActivities[id].desc }}</p>
-            <img id="map" :src="campActivities[id].mapUrl" alt="">
+            <img id="map" :src="campActivities[id].mapUrl" alt="Kort" @click="showMap = !showMap">
         </div>
+        <Transition>
+            <div v-if="showMap" class="bigMap" @click="showMap = !showMap">
+                <img :src="campActivities[id].mapUrl" alt="Kort">
+            </div>
+        </Transition>
     </main>
 </template>
 
 <style scoped>
 @media screen and (max-width: 640px) {
-    .logo {
-        grid-column: 4/span 3;
-        margin: auto;
+
+    .bigMap {
+        grid-column: 1/span 9;
+        position: absolute;
+        top: 0;
+        background-color: #00000075;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .v-enter-active,
+    .v-leave-active {
+        transition: opacity 0.7s ease;
+    }
+
+    .v-enter-from,
+    .v-leave-to {
+        opacity: 0;
+    }
+
+    .bigMap img {
         width: 100%;
+        padding: 80% 0;
     }
 
     .back {
@@ -80,13 +123,8 @@ const id = sessionStorage.getItem("SelectedCampActivity") - 1
         width: 100%;
     }
 }
-@media screen and (min-width: 641px) and (max-width: 1024px) {
-    .logo {
-        grid-column: 4/span 3;
-        margin: auto;
-        width: 100%;
-    }
 
+@media screen and (min-width: 641px) and (max-width: 1024px) {
     .back {
         width: 33%;
         margin: 25% auto;
@@ -139,5 +177,30 @@ const id = sessionStorage.getItem("SelectedCampActivity") - 1
         grid-column: 1/span 7;
         width: 100%;
     }
+
+    .v-enter-active,
+    .v-leave-active {
+        transition: opacity 0.7s ease;
+    }
+
+    .v-enter-from,
+    .v-leave-to {
+        opacity: 0;
+    }
+
+    .bigMap img {
+        width: 100%;
+        padding: 30% 0;
+    }
+
+    .bigMap {
+        grid-column: 1/span 9;
+        position: absolute;
+        top: 0;
+        background-color: #00000075;
+        height: 100vh;
+        max-width: 100vw;
+    }
+
 }
 </style>

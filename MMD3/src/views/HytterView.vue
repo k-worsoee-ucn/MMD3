@@ -1,45 +1,45 @@
 <script setup>
-
+import TheHeader from "@/components/TheHeader.vue"
 </script>
 
 <template>
     <main>
         <RouterView />
         <RouterLink class="back" to="/">
-            <img src="@/assets/chevron-left-solid.svg" alt="">
+            <img src="@/assets/chevron-left-solid.svg" alt="Tilbage">
         </RouterLink>
-        <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
+        <TheHeader></TheHeader>
         <h1>Hytter</h1>
         <div class="card">
-            <img src="/images/Hytter/Hytte1.png" alt="">
+            <img src="/images/Hytter/Hytte1.png" alt="LUKSUSHYTTE, 35 KVM">
             <div class="cardText">
                 <h2>LUKSUSHYTTE, 35 KVM</h2>
                 <p>Hytte med plads op til 6 personer med soveværelse, værelse med køjeseng, hems, bad og toilet samt en stor køkken/stue afdeling. Ustyret med en dejlig terrasse</p>
             </div>
         </div>
         <div class="card">
-            <img src="/images/Hytter/Hytte2.png" alt="">
+            <img src="/images/Hytter/Hytte2.png" alt="HYTTE, 25 KVM">
             <div class="cardText">
                 <h2>HYTTE, 25 KVM</h2>
                 <p>Hytte med plads op til 6 personer med soveværelse, værelse med køjer, hems, bad og toilet, køkken/stue i et med tv. Udstyret med en dejlig terrasse</p>
             </div>
         </div>
         <div class="card">
-            <img src="/images/Hytter/Hytte3.png" alt="">
+            <img src="/images/Hytter/Hytte3.png" alt="LUKSUSHYTTE, 21 KVM">
             <div class="cardText">
                 <h2>LUKSUSHYTTE, 21 KVM</h2>
                 <p>Optimal til 2 personer med soveværelse, bad og toilet, mindre hems med plads til 2 ekstra gæster, køkken/stue i et samt en skøn terrasse med udsigt</p>
             </div>
         </div>
         <div class="card">
-            <img src="/images/Hytter/Hytte4.png" alt="">
+            <img src="/images/Hytter/Hytte4.png" alt="HYTTE, 25 KVM">
             <div class="cardText">
                 <h2>HYTTE, 25 KVM</h2>
                 <p>Hytte med plads til 6 personer med god isolering, køjerum, toilet, fint køkken, tv samt en stor terrasse med udsigt over vandet</p>
             </div>
         </div>
         <div class="card">
-            <img src="/images/Hytter/Hytte5.png" alt="">
+            <img src="/images/Hytter/Hytte5.png" alt="HYTTE, 9 KVM">
             <div class="cardText">
                 <h2>HYTTE, 9 KVM</h2>
                 <p>Lille hyggelig hytte til 2 personer med køleskab, varme og service</p>
@@ -50,12 +50,6 @@
 
 <style scoped>
 @media screen and (max-width: 640px) {
-    .logo {
-        grid-column: 4/span 3;
-        margin: auto;
-        width: 100%;
-    }
-
     .back {
         width: 50%;
         margin: 25% auto;
@@ -109,11 +103,6 @@
 
 }
 @media screen and (min-width: 641px) and (max-width: 1024px) {
-    .logo {
-        grid-column: 4/span 3;
-        margin: auto;
-        width: 100%;
-    }
 
     .back {
         width: 33%;

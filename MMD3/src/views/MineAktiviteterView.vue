@@ -1,26 +1,34 @@
 <script setup>
-
+import TheHeader from "@/components/TheHeader.vue"
 </script>
 
 <template>
     <main>
         <RouterView />
         <RouterLink class="back" to="/">
-            <img src="@/assets/chevron-left-solid.svg" alt="">
+            <img src="@/assets/chevron-left-solid.svg" alt="Tilbage">
         </RouterLink>
-        <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
+        <TheHeader></TheHeader>
         <h1>MINE AKTIVITETER</h1>
-        <select name="datePicker" id="datePicker">
-            <option value="">24. Juli 2024</option>
-            <option value="">25. Juli 2024</option>
-            <option value="">26. Juli 2024</option>
-            <option value="">27. Juli 2024</option>
-            <option value="">28. Juli 2024</option>
-            <option value="">29. Juli 2024</option>
-            <option value="">30. Juli 2024</option>
-            <option value="">31. Juli 2024</option>
-        </select>
+        <div class="toFromDate">
+            <h3>Fra:</h3>
+            <input type="date" name="" id="" value="2024-07-24">
+            <h3>Til:</h3>
+            <input type="date" name="" id="" value="2024-07-25">
+        </div>
         <div class="cardHolder">
+            <div class="placeHolderCard">
+                <p>Ingen aktiviteter</p>
+            </div>
+            <div class="placeHolderCard">
+                <p>Ingen aktiviteter</p>
+            </div>
+            <div class="placeHolderCard">
+                <p>Ingen aktiviteter</p>
+            </div>
+            <div class="placeHolderCard">
+                <p>Ingen aktiviteter</p>
+            </div>
             <div class="placeHolderCard">
                 <p>Ingen aktiviteter</p>
             </div>
@@ -48,18 +56,13 @@
 
         </div>
         <RouterLink class="plusBtn" to="/opretaktivitet">
-            <img src="@/assets/plusBtn.svg" alt="">
+            <img src="@/assets/plusBtn.svg" alt="Tilføj aktivitet">
         </RouterLink>
     </main>
 </template>
 
 <style scoped>
 @media screen and (max-width: 640px) {
-    .logo {
-        grid-column: 4/span 3;
-        margin: auto;
-        width: 100%;
-    }
 
     .back {
         width: 50%;
@@ -72,12 +75,26 @@
         grid-column: 2/span 3;
     }
 
-    #datePicker {
-        grid-column: 2/span 5;
-        width: 70%;
-        padding: 5%;
+    .toFromDate {
+        grid-column: 2/span 7;
+        display: grid;
+        grid-template-columns: 10% 1fr 10% 1fr;
+        margin-bottom: 5%;
+    }
+
+    .toFromDate input {
+        padding: 1%;
         border-radius: 5px;
-        margin-bottom: 15%;
+        width: 80%;
+        height: fit-content;
+        margin: auto;
+        font-family: Manrope;
+    }
+
+    .toFromDate h3 {
+        font-family: Manrope;
+        height: fit-content;
+        margin: auto;
     }
 
     h2 {
@@ -91,7 +108,7 @@
         grid-template-columns: repeat(6, 1fr);
         gap: 5%;
         padding-bottom: 15%;
-        height: 50vh;
+        height: 80vh;
     }
 
     .placeHolderCard {
@@ -115,11 +132,6 @@
 }
 
 @media screen and (min-width: 641px) and (max-width: 1024px) {
-    .logo {
-        grid-column: 4/span 3;
-        margin: auto;
-        width: 100%;
-    }
 
     .back {
         width: 33%;
@@ -133,13 +145,28 @@
         font-size: 3rem;
     }
 
-    #datePicker {
-        grid-column: 2/span 5;
-        width: 70%;
-        padding: 5%;
+    .toFromDate {
+        grid-column: 2/span 7;
+        display: grid;
+        grid-template-columns: 10% 1fr 10% 1fr;
+        margin-bottom: 5%;
+    }
+
+    .toFromDate input {
+        padding: 1%;
         border-radius: 5px;
-        margin-bottom: 15%;
+        width: 80%;
+        height: fit-content;
+        margin: auto;
+        font-family: Manrope;
         font-size: 1.5rem;
+    }
+
+    .toFromDate h3 {
+        font-family: Manrope;
+        height: fit-content;
+        margin: auto;
+        font-size: 2rem;
     }
 
     h2 {
@@ -154,7 +181,7 @@
         grid-template-columns: repeat(6, 1fr);
         gap: 5%;
         padding-bottom: 15%;
-        height: 50vh;
+        height: 80vh;
     }
 
     .placeHolderCard {

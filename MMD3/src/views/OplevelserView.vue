@@ -1,39 +1,55 @@
 <script setup>
+import { onMounted } from "vue";
+import TheHeader from "@/components/TheHeader.vue"
 sessionStorage.setItem("firstLoad", false)
+
+onMounted(() => {
+  const menuItem1 = document.querySelector("#menuItem1")
+  const menuItem2 = document.querySelector("#menuItem2")
+  const menuItem3 = document.querySelector("#menuItem3")
+  const menuItem4 = document.querySelector("#menuItem4")
+  const menuItem5 = document.querySelector("#menuItem5")
+  menuItem1.classList.remove("currentItem")
+  menuItem2.classList.remove("currentItem")
+  menuItem3.classList.add("currentItem")
+  menuItem4.classList.remove("currentItem")
+  menuItem5.classList.remove("currentItem")
+})
+
 </script>
 
 <template>
     <main>
         <RouterView />
         <RouterLink class="back" to="/">
-            <img src="@/assets/chevron-left-solid.svg" alt="">
+            <img src="@/assets/chevron-left-solid.svg" alt="Tilbage">
         </RouterLink>
-        <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
+        <TheHeader></TheHeader>
         <h1>Oplevelser</h1>
         <h2>Slotte og Kirker</h2>
         <div class="cardHolder">
             <div class="card">
-                <img src="/images/Oplevelser/Graasten_slot.png" alt="">
+                <img src="/images/Oplevelser/Graasten_slot.png" alt="Gråsten slot">
                 <p>GRÅSTEN SLOT</p>
                 <p class="desc">Smukt slot 10 min væk fra Lærkelunden</p>
             </div>
             <div class="card">
-                <img src="/images/Oplevelser/Soenderborg_slot.png" alt="">
+                <img src="/images/Oplevelser/Soenderborg_slot.png" alt="Sønderborg slot">
                 <p>SØNDERBORG SLOT</p>
                 <p class="desc">Historisk slot ca. 30 min væk fra Lærkelunden</p>
             </div>
             <div class="card">
-                <img src="/images/Oplevelser/Gottorp_slot.png" alt="">
+                <img src="/images/Oplevelser/Gottorp_slot.png" alt="Gottrop slot">
                 <p>GOTTORP SLOT</p>
                 <p class="desc">Bygget på en ø vest for Slegsvig centrum</p>
             </div>
             <div class="card">
-                <img src="/images/Oplevelser/Glucksborg_slot.png" alt="">
+                <img src="/images/Oplevelser/Glucksborg_slot.png" alt="Glücksborg slot">
                 <p>GLÜCKSBORG SLOT</p>
                 <p class="desc">Et af de vigtigste residensslotte </p>
             </div>
             <div class="card">
-                <img src="/images/Oplevelser/Den_gamle_kirke.png" alt="">
+                <img src="/images/Oplevelser/Den_gamle_kirke.png" alt="Den gamle kirke">
                 <p>DEN GAMLE KIRKE</p>
                 <p class="desc">Et af landets 5 ældste kirker</p>
             </div>
@@ -41,22 +57,22 @@ sessionStorage.setItem("firstLoad", false)
         <h2>Museer og forlystelser</h2>
         <div class="cardHolder">
             <div class="card">
-                <img src="/images/Oplevelser/Historiecenter.png" alt="">
+                <img src="/images/Oplevelser/Historiecenter.png" alt="Historiecenter">
                 <p>HISTORIECENTER DYBBEL BANKE</p>
                 <p class="desc">Om krigen i 1864</p>
             </div>
             <div class="card">
-                <img src="/images/Oplevelser/Universe.png" alt="">
+                <img src="/images/Oplevelser/Universe.png" alt="Universe">
                 <p>UNIVERSE</p>
                 <p class="desc">Smukt slot 10 min væk fra Lærkelunden</p>
             </div>
             <div class="card">
-                <img src="/images/Oplevelser/Hedeby.png" alt="">
+                <img src="/images/Oplevelser/Hedeby.png" alt="Hedeby">
                 <p>HEDEBY</p>
                 <p class="desc">Smukt slot 10 min væk fra Lærkelunden</p>
             </div>
             <div class="card">
-                <img src="https://unsplash.it/400" alt="">
+                <img src="/images/Oplevelser/Krusmoelle.png" alt="Krusmølle">
                 <p>KRUSMØLLE</p>
                 <p class="desc">Mølle med tilnyttet dejlig café</p>
             </div>
@@ -64,17 +80,17 @@ sessionStorage.setItem("firstLoad", false)
         <h2>Sport og natur</h2>
         <div class="cardHolder">
             <div class="card">
-                <img src="/images/Oplevelser/Golf.png" alt="">
+                <img src="/images/Oplevelser/Golf.png" alt="Golf">
                 <p>GOLF</p>
                 <p class="desc">Benniksgaards- og Sønderjyllands Golfklub</p>
             </div>
             <div class="card">
-                <img src="/images/Oplevelser/Sti.png" alt="">
+                <img src="/images/Oplevelser/Sti.png" alt="Gendarmstien">
                 <p>GENDARMSTIEN</p>
                 <p class="desc">Går lige igennem Lærkelunden 84km</p>
             </div>
             <div class="card">
-                <img src="/images/Oplevelser/Fiskesoe.png" alt="">
+                <img src="/images/Oplevelser/Fiskesoe.png" alt="Frueskov fiskesø">
                 <p>FRUESKOV FISKESØ</p>
                 <p class="desc">Ligger i et naturskønt og roligt område</p>
             </div>
@@ -84,12 +100,6 @@ sessionStorage.setItem("firstLoad", false)
 
 <style scoped>
 @media screen and (max-width: 640px) {
-    .logo {
-        grid-column: 4/span 3;
-        margin: auto;
-        width: 100%;
-    }
-
     .back {
         width: 50%;
         margin: 25% auto;
@@ -140,12 +150,6 @@ sessionStorage.setItem("firstLoad", false)
 }
 
 @media screen and (min-width: 641px) and (max-width: 1024px) {
-    .logo {
-        grid-column: 4/span 3;
-        margin: auto;
-        width: 100%;
-    }
-
     .back {
         width: 33%;
         margin: 25% auto;

@@ -1,29 +1,43 @@
 <script setup>
+import TheHeader from "@/components/TheHeader.vue"
+import { onMounted } from "vue";
 
+onMounted(() => {
+  const menuItem1 = document.querySelector("#menuItem1")
+  const menuItem2 = document.querySelector("#menuItem2")
+  const menuItem3 = document.querySelector("#menuItem3")
+  const menuItem4 = document.querySelector("#menuItem4")
+  const menuItem5 = document.querySelector("#menuItem5")
+  menuItem1.classList.remove("currentItem")
+  menuItem2.classList.remove("currentItem")
+  menuItem3.classList.remove("currentItem")
+  menuItem4.classList.remove("currentItem")
+  menuItem5.classList.add("currentItem")
+})
 </script>
 
 <template>
     <main>
         <RouterView />
         <RouterLink class="back" to="/">
-            <img src="@/assets/chevron-left-solid.svg" alt="">
+            <img src="@/assets/chevron-left-solid.svg" alt="Tilbage">
         </RouterLink>
-        <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
+        <TheHeader></TheHeader>
         <h1>Min Profil</h1>
-        <img id="profilePic" src="/images/Personer/Martin.png" alt="">
+        <img id="profilePic" src="/images/Personer/Martin.png" alt="Profilbillede">
         <div id="info">
             <h2>Martin Lystrup Jensen</h2>
             <p>MartinLJensen@gmail.com</p>
-            <RouterLink class="infobtn" to="/mineaktiviteter">
-                <img src="@/assets/calendar-solid.svg" alt="">
+            <RouterLink class="infobtn inv" to="/mineaktiviteter">
+                <img src="@/assets/calendar-solid.svg" alt="Mine aktiviteter">
                 <p>Mine Aktiviteter</p>
             </RouterLink>
-            <RouterLink class="infobtn" to="/anmeldelser">
-                <img src="@/assets/star-solid.svg" alt="">
+            <RouterLink class="infobtn inv" to="/anmeldelser">
+                <img src="@/assets/star-solid.svg" alt="Anmeldelser">
                 <p>Mine Anmeldelser</p>
             </RouterLink>
             <RouterLink class="infobtn" to="/">
-                <img src="@/assets/logout.svg" alt="">
+                <img src="@/assets/logout.svg" alt="Log ud">
                 <p>Log Ud</p>
             </RouterLink>
         </div>
@@ -41,13 +55,7 @@
         z-index: 1;
         aspect-ratio: 1/1;
         object-fit: cover;
-    }
-
-    .logo {
-        grid-column: 4/span 3;
-        margin: auto;
-        width: 100%;
-    }
+    }   
 
     .back {
         width: 50%;
@@ -68,11 +76,16 @@
         border-radius: 5px;
         margin-bottom: 5%;
         text-decoration: none;
+        padding: 5%;
     }
 
     .infobtn img {
         width: 50%;
         margin: auto;
+    }
+
+    .inv img {
+        filter: invert();
     }
 
     .infobtn p {
@@ -85,8 +98,8 @@
         background-image: linear-gradient(to right, #B5D6F2, #EAF1F8, #B5D6F2);
         display: grid;
         grid-template-columns: repeat(9, 1fr);
-        margin-top: -50%;
-        padding: 40% 0 15% 0;
+        margin-top: -30%;
+        padding: 40% 0 80% 0;
     }
 
     #info h2 {
@@ -119,12 +132,6 @@
         object-fit: cover;
     }
 
-    .logo {
-        grid-column: 4/span 3;
-        margin: auto;
-        width: 100%;
-    }
-
     .back {
         width: 33%;
         margin: 25% auto;
@@ -153,6 +160,10 @@
         margin: auto;
     }
 
+    .inv img {
+        filter: invert();
+    }
+
     .infobtn p {
         margin: auto 0;
         color: #000;
@@ -163,8 +174,8 @@
         background-image: linear-gradient(to right, #B5D6F2, #EAF1F8, #B5D6F2);
         display: grid;
         grid-template-columns: repeat(9, 1fr);
-        margin-top: -25%;
-        padding: 20% 0 15% 0;
+        margin-top: -20%;
+        padding: 20% 0 80% 0;
     }
 
     #info h2 {

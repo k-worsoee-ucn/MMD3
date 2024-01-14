@@ -1,28 +1,42 @@
 <script setup>
+import TheHeader from "@/components/TheHeader.vue"
+import { onMounted } from "vue";
 
+onMounted(() => {
+  const menuItem1 = document.querySelector("#menuItem1")
+  const menuItem2 = document.querySelector("#menuItem2")
+  const menuItem3 = document.querySelector("#menuItem3")
+  const menuItem4 = document.querySelector("#menuItem4")
+  const menuItem5 = document.querySelector("#menuItem5")
+  menuItem1.classList.remove("currentItem")
+  menuItem2.classList.remove("currentItem")
+  menuItem3.classList.remove("currentItem")
+  menuItem4.classList.add("currentItem")
+  menuItem5.classList.remove("currentItem")
+})
 </script>
 
 <template>
     <main>
         <RouterView />
         <RouterLink class="back" to="/">
-            <img src="@/assets/chevron-left-solid.svg" alt="">
+            <img src="@/assets/chevron-left-solid.svg" alt="Tilbage">
         </RouterLink>
-        <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
+        <TheHeader></TheHeader>
         <h1>Anmeldelser</h1>
         <div class="review">
             <div class="rUser">
-                <img src="/images/Personer/Martin.png" alt="">
+                <img src="/images/Personer/Martin.png" alt="Profilbillede">
                 <h2>Martin Lystrup Jensen</h2>
             </div>
             <hr>
             <div class="rInfo">
                 <div class="rRating">
-                    <img src="@/assets/ratingStarFilled.svg" alt="">
-                    <img src="@/assets/ratingStarFilled.svg" alt="">
-                    <img src="@/assets/ratingStarFilled.svg" alt="">
-                    <img src="@/assets/ratingStarFilled.svg" alt="">
-                    <img src="@/assets/ratingStarFilled.svg" alt="">
+                    <img src="@/assets/ratingStarFilled.svg" alt="Udfyldt stjerne">
+                    <img src="@/assets/ratingStarFilled.svg" alt="Udfyldt stjerne">
+                    <img src="@/assets/ratingStarFilled.svg" alt="Udfyldt stjerne">
+                    <img src="@/assets/ratingStarFilled.svg" alt="Udfyldt stjerne">
+                    <img src="@/assets/ratingStarFilled.svg" alt="Udfyldt stjerne">
                 </div>
                 <p class="rText">
                     Lærkelunden Camping har været en fantastisk oplevelse! Børnene elskede hvert øjeblik på dette dejlige
@@ -32,17 +46,17 @@
         </div>
         <div class="review">
             <div class="rUser">
-                <img src="/images/Personer/Jesper.png" alt="">
+                <img src="/images/Personer/Jesper.png" alt="Profilbillede">
                 <h2>Jesper Lund Pedersen</h2>
             </div>
             <hr>
             <div class="rInfo">
                 <div class="rRating">
-                    <img src="@/assets/ratingStarFilled.svg" alt="">
-                    <img src="@/assets/ratingStarFilled.svg" alt="">
-                    <img src="@/assets/ratingStarFilled.svg" alt="">
-                    <img src="@/assets/ratingStarFilled.svg" alt="">
-                    <img src="@/assets/ratingStarFilled.svg" alt="">
+                    <img src="@/assets/ratingStarFilled.svg" alt="Udfyldt stjerne">
+                    <img src="@/assets/ratingStarFilled.svg" alt="Udfyldt stjerne">
+                    <img src="@/assets/ratingStarFilled.svg" alt="Udfyldt stjerne">
+                    <img src="@/assets/ratingStarFilled.svg" alt="Udfyldt stjerne">
+                    <img src="@/assets/ratingStarFilled.svg" alt="Udfyldt stjerne">
                 </div>
                 <p class="rText">
                     En dejlig oplevelse på campingpladsen! Naturen omkring os var skøn, og atmosfæren var fantastisk. Et
@@ -52,17 +66,17 @@
         </div>
         <div class="review">
             <div class="rUser">
-                <img src="/images/Personer/Julie.png" alt="">
+                <img src="/images/Personer/Julie.png" alt="Profilbillede">
                 <h2>Julie Maj Næstrup</h2>
             </div>
             <hr>
             <div class="rInfo">
                 <div class="rRating">
-                    <img src="@/assets/ratingStarFilled.svg" alt="">
-                    <img src="@/assets/ratingStarFilled.svg" alt="">
-                    <img src="@/assets/ratingStarFilled.svg" alt="">
-                    <img src="@/assets/ratingStarFilled.svg" alt="">
-                    <img src="@/assets/ratingStarFilled.svg" alt="">
+                    <img src="@/assets/ratingStarFilled.svg" alt="Udfyldt stjerne">
+                    <img src="@/assets/ratingStarFilled.svg" alt="Udfyldt stjerne">
+                    <img src="@/assets/ratingStarFilled.svg" alt="Udfyldt stjerne">
+                    <img src="@/assets/ratingStarFilled.svg" alt="Udfyldt stjerne">
+                    <img src="@/assets/ratingStarFilled.svg" alt="Udfyldt stjerne">
                 </div>
                 <p class="rText">
                     En rigtig skøn oplevelse på Lærkelunden. Vi nød at deltage i mange spændende aktiviteter, der gjorde
@@ -75,11 +89,11 @@
                 <h2>Skriv en anmeldelse</h2>
                 <h3>Score:</h3>
                 <div class="addRating">
-                    <img src="@/assets/ratingStarUnfilled.svg" alt="">
-                    <img src="@/assets/ratingStarUnfilled.svg" alt="">
-                    <img src="@/assets/ratingStarUnfilled.svg" alt="">
-                    <img src="@/assets/ratingStarUnfilled.svg" alt="">
-                    <img src="@/assets/ratingStarUnfilled.svg" alt="">
+                    <img src="@/assets/ratingStarUnfilled.svg" alt="Ufyldt stjerne">
+                    <img src="@/assets/ratingStarUnfilled.svg" alt="Ufyldt stjerne">
+                    <img src="@/assets/ratingStarUnfilled.svg" alt="Ufyldt stjerne">
+                    <img src="@/assets/ratingStarUnfilled.svg" alt="Ufyldt stjerne">
+                    <img src="@/assets/ratingStarUnfilled.svg" alt="Ufyldt stjerne">
                 </div>
                 <h3>Anmeldelse:</h3>
                 <input type="text">
@@ -93,11 +107,6 @@
 
 <style scoped>
 @media screen and (max-width: 640px) {
-    .logo {
-        grid-column: 4/span 3;
-        margin: auto;
-        width: 100%;
-    }
 
     .back {
         width: 50%;
@@ -183,11 +192,6 @@
     }
 }
 @media screen and (min-width: 641px) and (max-width: 1024px) {
-    .logo {
-        grid-column: 4/span 3;
-        margin: auto;
-        width: 100%;
-    }
 
     .back {
         width: 33%;

@@ -1,17 +1,17 @@
 <script setup>
-
+    import TheHeader from "@/components/TheHeader.vue"
 </script>
 
 <template>
     <main>
         <RouterView />
         <RouterLink class="back" to="/">
-            <img src="@/assets/chevron-left-solid.svg" alt="">
+            <img src="@/assets/chevron-left-solid.svg" alt="Tilbage">
         </RouterLink>
-        <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
+        <TheHeader></TheHeader>
         <h1>Udlejningsvogne</h1>
         <div class="card">
-            <img src="/images/Udlejningsvogne/Udlejning1.png" alt="">
+            <img src="/images/Udlejningsvogne/Udlejning1.png" alt="LUKSUSVOGN MED GULVVARME">
             <div class="cardText">
                 <h2>LUKSUSVOGN MED GULVVARME</h2>
                 <p>Adria Alpina 663 PT: En rigtig luksusvogn med gulvarme til 5 personer. Vognen er indrettet med 3 køjer,
@@ -19,17 +19,19 @@
             </div>
         </div>
         <div class="card">
-            <img src="/images/Udlejningsvogne/Udlejning2.png" alt="">
+            <img src="/images/Udlejningsvogne/Udlejning2.png" alt="LUKSUSVOGN FOR 5">
             <div class="cardText">
                 <h2>LUKSUSVOGN FOR 5</h2>
-                <p>Adria Adora 573 PT: Luksusvogn med plads til 5 personer. Vognen er indrettet med 3 køjer, dobbeltseng, siddegruppe, køkken med blus, gasovn, køleskab og fryser, toilet, tv.</p>
+                <p>Adria Adora 573 PT: Luksusvogn med plads til 5 personer. Vognen er indrettet med 3 køjer, dobbeltseng,
+                    siddegruppe, køkken med blus, gasovn, køleskab og fryser, toilet, tv.</p>
             </div>
         </div>
         <div class="card">
-            <img src="/images/Udlejningsvogne/Udlejning3.png" alt="">
+            <img src="/images/Udlejningsvogne/Udlejning3.png" alt="LUKSUSVOGN FOR 2">
             <div class="cardText">
                 <h2>LUKSUSVOGN FOR 2</h2>
-                <p>Adria Alpina 663 HT: Luksusvogn indrettet til 2 personer.  Indrettet med dobbeltseng, siddegruppe, køkken med blus, ovn, køleskab og fryser, toilet, tv og vandbåren gulvvarme</p>
+                <p>Adria Alpina 663 HT: Luksusvogn indrettet til 2 personer. Indrettet med dobbeltseng, siddegruppe, køkken
+                    med blus, ovn, køleskab og fryser, toilet, tv og vandbåren gulvvarme</p>
             </div>
         </div>
     </main>
@@ -37,11 +39,7 @@
 
 <style scoped>
 @media screen and (max-width: 640px) {
-    .logo {
-        grid-column: 4/span 3;
-        margin: auto;
-        width: 100%;
-    }
+
 
     .back {
         width: 50%;
@@ -95,13 +93,8 @@
     }
 
 }
-@media screen and (min-width: 641px) and (max-width: 1024px) {
-    .logo {
-        grid-column: 4/span 3;
-        margin: auto;
-        width: 100%;
-    }
 
+@media screen and (min-width: 641px) and (max-width: 1024px) {
     .back {
         width: 33%;
         margin: 25% auto;
@@ -158,5 +151,4 @@
         font-size: 2rem;
     }
 
-}
-</style>
+}</style>

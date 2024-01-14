@@ -14,26 +14,47 @@ onUpdated(() => {
   <RouterView />
   <div v-if="screenWidth <= 1024" class="menu">
     <RouterLink id="menuItem1" to="/">
-      <img src="@/assets/house-solid.svg" alt="">
+      <img src="@/assets/house-solid.svg" alt="Hjem ikon">
     </RouterLink>
-    <RouterLink id="menuItem2" to="/anmeldelser">
-      <img src="@/assets/star-solid.svg" alt="">
+    <RouterLink id="menuItem2" to="/aktiviteter">
+      <img src="@/assets/calendar-solid.svg" alt="Aktiviteter ikon">
     </RouterLink>
-    <RouterLink id="menuItem3" to="/mineaktiviteter">
-      <img src="@/assets/calendar-solid.svg" alt="">
+    <RouterLink id="menuItem3" to="/oplevelser">
+      <img src="@/assets/compass-regular.svg" alt="Oplevelser ikon">
     </RouterLink>
-    <RouterLink id="menuItem4" to="/myprofile">
-      <img src="@/assets/user-solid.svg" alt="">
+    <RouterLink id="menuItem4" to="/anmeldelser">
+      <img src="@/assets/star-solid.svg" alt="Anmeldelser ikon">
+    </RouterLink>
+    <RouterLink id="menuItem5" to="/myprofile">
+      <img src="@/assets/user-solid.svg" alt="Min profil ikon">
     </RouterLink>
   </div>
 </template>
 
 <style scoped>
 @media screen and (max-width: 640px) {
+  .currentItem {
+    margin: -15% 0 15% 0;
+    background: #E5F4FF;
+    border-radius: 0 0 50% 50%;
+    aspect-ratio: 1/1;
+    width: 100%;
+  }
+
+  .currentItem img {
+    background-color: #F97F0E;
+    padding: 15% !important;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    width: 50% !important;
+    height: 50% !important;
+    margin: 10% !important;
+  }
+
   .menu {
     grid-column: 1/span 9;
     display: grid;
-    grid-template-columns: 5% repeat(4, 1fr) 5%;
+    grid-template-columns: 5% repeat(5, 1fr) 5%;
     background-color: #B1D8F8;
     padding: 2% 0;
     border-radius: 15px 15px 0 0;
@@ -46,11 +67,11 @@ onUpdated(() => {
   #menuItem1 img,
   #menuItem2 img,
   #menuItem3 img,
-  #menuItem4 img {
+  #menuItem4 img,
+  #menuItem5 img {
     width: 35%;
     height: 100%;
     margin: auto 25%;
-    filter: invert(100%);
     padding: 5% 0;
   }
 
@@ -76,7 +97,7 @@ onUpdated(() => {
   .menu {
     grid-column: 1/span 9;
     display: grid;
-    grid-template-columns: 20% repeat(4, 1fr) 20%;
+    grid-template-columns: 20% repeat(5, 1fr) 20%;
     background-color: #B1D8F8;
     padding: 2% 0;
     border-radius: 15px 15px 0 0;
@@ -86,14 +107,32 @@ onUpdated(() => {
     z-index: 4;
   }
 
+  .currentItem {
+    margin: -15% 0 15% 0;
+    background: #E5F4FF;
+    border-radius: 0 0 50% 50%;
+    aspect-ratio: 1/1;
+    width: 100%;
+  }
+
+  .currentItem img {
+    background-color: #F97F0E;
+    padding: 15% !important;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    width: 50% !important;
+    height: 50% !important;
+    margin: 10% !important;
+  }
+
   #menuItem1 img,
   #menuItem2 img,
   #menuItem3 img,
-  #menuItem4 img {
+  #menuItem4 img,
+  #menuItem5 img {
     width: 35%;
     height: 100%;
     margin: auto 25%;
-    filter: invert(100%);
     padding: 5% 0;
   }
 
@@ -123,10 +162,10 @@ onUpdated(() => {
     margin: 0;
     background-color: #E5F4FF;
   }
-  
+
   #app {
     display: grid;
-    grid-template-columns: repeat(14,1fr);
+    grid-template-columns: repeat(14, 1fr);
   }
 }
 
@@ -193,4 +232,5 @@ onUpdated(() => {
     scale: 0;
     display: none;
   }
-}</style>
+}
+</style>

@@ -1,14 +1,14 @@
 <script setup>
-
+import TheHeader from "@/components/TheHeader.vue"
 </script>
 
 <template>
     <main>
         <RouterView />
         <RouterLink class="back" to="/aktiviteter">
-            <img src="@/assets/chevron-left-solid.svg" alt="">
+            <img src="@/assets/chevron-left-solid.svg" alt="Tilbage">
         </RouterLink>
-        <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
+        <TheHeader></TheHeader>
         <h1>OPRET AKTIVITET</h1>
         <form>
             <label for="">Navn på aktivitet:</label>
@@ -26,11 +26,6 @@
 
 <style scoped>
 @media screen and (max-width: 640px) {
-    .logo {
-        grid-column: 4/span 3;
-        margin: auto;
-        width: 100%;
-    }
 
     .back {
         width: 50%;
@@ -45,6 +40,10 @@
 
     #aDesc {
         height: 20vh;
+    }
+
+    #aImg {
+        margin-bottom: 10%;
     }
 
     form {
@@ -72,14 +71,10 @@
         border: none;
         border-radius: 5px;
         font-size: 2rem;
+        margin-bottom: 15%;
     }
 }
 @media screen and (min-width: 641px) and (max-width: 1024px) {
-    .logo {
-        grid-column: 4/span 3;
-        margin: auto;
-        width: 100%;
-    }
 
     .back {
         width: 33%;
@@ -102,6 +97,10 @@
 
     #aDT {
         height: 2vh;
+    }
+
+    #aImg {
+        margin-bottom: 10%;
     }
 
     form {
@@ -134,6 +133,7 @@
         border: none;
         border-radius: 5px;
         font-size: 2rem;
+        margin-bottom: 15%;
     }
 }
 </style>

@@ -1,27 +1,49 @@
 <script setup>
+import { onMounted, ref } from "vue";
 import data from "@/assets/activitiesData.js"
+import TheHeader from "@/components/TheHeader.vue"
 const id = sessionStorage.getItem("SelectedActivity") - 1
+
+const showMap = ref(false)
+
+onMounted(() => {
+  const menuItem1 = document.querySelector("#menuItem1")
+  const menuItem2 = document.querySelector("#menuItem2")
+  const menuItem3 = document.querySelector("#menuItem3")
+  const menuItem4 = document.querySelector("#menuItem4")
+  const menuItem5 = document.querySelector("#menuItem5")
+  menuItem1.classList.remove("currentItem")
+  menuItem2.classList.add("currentItem")
+  menuItem3.classList.remove("currentItem")
+  menuItem4.classList.remove("currentItem")
+  menuItem5.classList.remove("currentItem")
+})
 </script>
 
 <template>
     <main>
         <RouterView />
         <RouterLink class="back" to="/aktiviteter">
-            <img src="@/assets/chevron-left-solid.svg" alt="">
+            <img src="@/assets/chevron-left-solid.svg" alt="Tilbage">
         </RouterLink>
-        <img class="logo" src="@/assets/logo_laerkelundenx.svg" alt="">
+        <TheHeader></TheHeader>
         <div class="hero">
-            <img :src="data[id].imgUrl" alt="">
+            <img :src="data[id].imgUrl" alt="Billede af aktivitet">
             <h1>{{ data[id].name }}</h1>
         </div>
         <div class="activityCreator">
-            <img class="creatorIcon" :src="data[id].creator.creatorImageUrl" alt="">
+            <img class="creatorIcon" :src="data[id].creator.creatorImageUrl" alt="profilbillede">
             <h2>{{ data[id].creator.creatorName }}</h2>
             <hr>
             <p>{{ data[id].time }}</p>
             <p>{{ data[id].desc }}</p>
-            <img id="map" :src="data[id].mapUrl" alt="">
+            <img id="map" :src="data[id].mapUrl" alt="kort" @click="showMap = !showMap">
         </div>
+        <Transition>
+            <div v-if="showMap" class="bigMap" @click="showMap = !showMap">
+                <img :src="data[id].mapUrl" alt="kort">
+            </div>
+        </Transition>
         <button class="addAct">TILMELD</button>
     </main>
 </template>
@@ -103,6 +125,30 @@ const id = sessionStorage.getItem("SelectedActivity") - 1
     #map {
         grid-column: 1/span 7;
         width: 100%;
+    }
+
+    .v-enter-active,
+    .v-leave-active {
+        transition: opacity 0.7s ease;
+    }
+
+    .v-enter-from,
+    .v-leave-to {
+        opacity: 0;
+    }
+
+    .bigMap img {
+        width: 100%;
+        padding: 80% 0;
+    }
+
+    .bigMap {
+        grid-column: 1/span 9;
+        position: absolute;
+        top: 0;
+        background-color: #00000075;
+        height: 100vh;
+        width: 100vw;
     }
 
     .addAct {
@@ -195,6 +241,30 @@ const id = sessionStorage.getItem("SelectedActivity") - 1
     #map {
         grid-column: 1/span 7;
         width: 100%;
+    }
+
+    .v-enter-active,
+    .v-leave-active {
+        transition: opacity 0.7s ease;
+    }
+
+    .v-enter-from,
+    .v-leave-to {
+        opacity: 0;
+    }
+
+    .bigMap img {
+        width: 100%;
+        padding: 30% 0;
+    }
+
+    .bigMap {
+        grid-column: 1/span 9;
+        position: absolute;
+        top: 0;
+        background-color: #00000075;
+        height: 100vh;
+        max-width: 100vw;
     }
 
     .addAct {
